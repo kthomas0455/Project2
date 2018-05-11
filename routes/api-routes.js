@@ -11,6 +11,18 @@ module.exports = function(app) {
     });
   });
 
+    // Get route for returning(SORTING) posts of a specific location
+  // The same route will be used to sort artists by other parameters
+  app.get("/api/posts/location/:location", function(req, res) {
+    db.Post.findAll({
+      where: {
+        location: req.params.location,
+      },
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
   // Get route for returning(SORTING) posts of a specific stylePref
   // The same route will be used to sort artists by other parameters
   app.get("/api/posts/stylePref/:stylePref", function(req, res) {
@@ -22,6 +34,19 @@ module.exports = function(app) {
       res.json(dbPost);
     });
   });
+
+  // Get route for returning(SORTING) posts of a specific hourlyRate
+  // The same route will be used to sort artists by other parameters
+  app.get("/api/posts/hourlyRate/:hourlyRate", function(req, res) {
+    db.Post.findAll({
+      where: {
+        hourlyRate: req.params.hourlyRate,
+      },
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
 
 
   // POST route for saving a new artist
