@@ -11,12 +11,12 @@ module.exports = function(app) {
     });
   });
 
-  // Get route for returning(SORTING) posts of a specific artType
+  // Get route for returning(SORTING) posts of a specific stylePref
   // The same route will be used to sort artists by other parameters
-  app.get("/api/posts/artType/:artType", function(req, res) {
+  app.get("/api/posts/stylePref/:stylePref", function(req, res) {
     db.Post.findAll({
       where: {
-        artType: req.params.artType,
+        stylePref: req.params.stylePref,
       },
     }).then(function(dbPost) {
       res.json(dbPost);
@@ -28,9 +28,17 @@ module.exports = function(app) {
   app.post("/api/posts", function(req, res) {
     console.log(req.body);
     db.Post.create({
-      artist: req.body.title,
-      body: req.body.body,
-      artType: req.body.artType,
+      artistName: req.body.artistName,
+      location: req.body.location,
+      artistNumber: req.body.artistNumber,
+      independent: req.body.independent,
+      shopName: req.body.shopName,
+      hourlyRate: req.body.hourlyRate,
+      artistMin: req.body.artistMin,
+      stylePref: req.body.stylePref,
+      artistInsta: req.body.artistInsta,
+      shopLink: req.body.shopLink,
+      artistBio: req.body.artistBio
     }).then(function(dbPost) {
       res.json(dbPost);
     });
