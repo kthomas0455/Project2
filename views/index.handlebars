@@ -1,0 +1,20 @@
+
+
+<div class="row">
+	<div class="col-md-3">
+		{{#each artist}}
+		<div class="card" style="width: 18rem;">
+		  <img class="card-img-top" src="...">
+		  <div class="card-body">
+		    <h5 class="card-title">{{artistName}}</h5>
+		    <h3>{{loaction}}</h3>
+		    <h3>{{stylePref}}</h3>
+		    <h3>{{independent}}</h3>
+		    <p class="card-text">{{artistComments}}</p>
+		    <a href="/artist:{{this.id}}" class="btn btn-primary"></a>
+		  </div>
+		</div>
+		{{/each}}
+	</div>
+</div>
+
