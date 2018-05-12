@@ -4,6 +4,8 @@
 
 // Dependencies
 // =============================================================
+var db = require("../models");
+
 var path = require("path");
 
 // Routes
@@ -19,12 +21,30 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/register.html"));
   });
 
-  app.get("/artist", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile.html"));
+  app.get("/search/:id", function(req, res) {
+
+    db.artists.findAll({
+      where: {
+        id: req.params.id,
+      },
+    }).then(function(dbArtists) {
+      res.render("profile", {artist: dbArtists[0]});
+    });
+    
   });
 
   app.get("/search", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+
+    // geocoder section here 
+
+    // get stuff from artists table
+    db.artists.findAll({}).then(function(dbArtists) {
+
+      res.render("index", {artists: dbArtists});
+    });
+    // var artists = []
+
+    
   });
 
 };

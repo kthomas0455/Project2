@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   //Basic posting to database. More can be added at any time
-  var Post = sequelize.define("Post", {
+  var Artist = sequelize.define("artists", {
     artistName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -85,6 +85,10 @@ module.exports = function(sequelize, DataTypes) {
         len: [1],
       }
     }
-  });
-  return Post;
+  },
+ {
+    timestamps: false
+}
+  );
+  return Artist;
 };
