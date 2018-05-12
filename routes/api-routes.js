@@ -6,44 +6,44 @@ var db = require("../models");
 module.exports = function(app) {
   // GET route for getting all of the posts
   app.get("/api/posts/", function(req, res) {
-    db.Post.findAll({}).then(function(dbPost) {
-      res.json(dbPost);
+    db.artist.findAll({}).then(function(dbArtist) {
+      res.json(dbArtist);
     });
   });
 
     // Get route for returning(SORTING) posts of a specific location
   // The same route will be used to sort artists by other parameters
   app.get("/api/posts/location/:location", function(req, res) {
-    db.Post.findAll({
+    db.artist.findAll({
       where: {
         location: req.params.location,
       },
-    }).then(function(dbPost) {
-      res.json(dbPost);
+    }).then(function(dbArtist) {
+      res.json(dbArtist);
     });
   });
 
   // Get route for returning(SORTING) posts of a specific stylePref
   // The same route will be used to sort artists by other parameters
   app.get("/api/posts/stylePref/:stylePref", function(req, res) {
-    db.Post.findAll({
+    db.artist.findAll({
       where: {
         stylePref: req.params.stylePref,
       },
-    }).then(function(dbPost) {
-      res.json(dbPost);
+    }).then(function(dbArtist) {
+      res.json(dbArtist);
     });
   });
 
   // Get route for returning(SORTING) posts of a specific hourlyRate
   // The same route will be used to sort artists by other parameters
   app.get("/api/posts/hourlyRate/:hourlyRate", function(req, res) {
-    db.Post.findAll({
+    db.artist.findAll({
       where: {
         hourlyRate: req.params.hourlyRate,
       },
-    }).then(function(dbPost) {
-      res.json(dbPost);
+    }).then(function(dbArtist) {
+      res.json(dbArtist);
     });
   });
 
@@ -52,7 +52,7 @@ module.exports = function(app) {
   // POST route for saving a new artist
   app.post("/api/posts", function(req, res) {
     console.log(req.body);
-    db.Post.create({
+    db.artist.create({
       artistName: req.body.artistName,
       location: req.body.location,
       artistNumber: req.body.artistNumber,
@@ -64,8 +64,8 @@ module.exports = function(app) {
       artistInsta: req.body.artistInsta,
       shopLink: req.body.shopLink,
       artistBio: req.body.artistBio
-    }).then(function(dbPost) {
-      res.json(dbPost);
+    }).then(function(dbArtist) {
+      res.json(dbArtist);
     });
   });
 

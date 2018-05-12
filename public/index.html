@@ -11,7 +11,7 @@
     <!-- Bootstrap -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
 
     <!-- LINK TO CSS GOES HERE -->
 
@@ -20,7 +20,6 @@
     <!-- LINK TO JAVASCRIPT GOES HERE -->
 
 
-    <script src="assets/javascript/app.js"></script>
 
 
     <!-- LINK TO  font -->
@@ -101,7 +100,7 @@ font-family: 'Nunito', sans-serif;
         </div>
 
 
-      <div class="top_content">
+      <div id="cardDiv" class="top_content">
 
        
         <!-- <div class="column_one">
@@ -130,5 +129,65 @@ font-family: 'Nunito', sans-serif;
   </div>
 
 </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="assets/javascript/app.js"></script>
+
+<script type="text/javascript">
+
+  
+//   $(document).ready(function (){
+
+
+//       getArtists();
+
+//       function getArtists() {
+//         $.get("/api/posts/").then(function(data) {
+//           console.log("hit getartist function");
+
+//            for (var i = 0; i < data.length; i++) {
+//             createArtistCard(data[i]);
+//           }
+            
+//         })
+
+//       };
+
+
+//       function createArtistCard(artistData) {
+//         var div = $("#cardDiv");
+//         var newCard = div.addAttr("class", "card");
+
+//         newCard.data("artist", artistData);
+//         newCard.append("<h1>" + artistData.artistName + "</h1>");
+//         newCard.append("<h2> " + artistData.location + "</h2>");
+//         newCard.append("<h2> " + artistData.stylePref + "</h2>");
+//         newCard.append("<h2> " + artistData.comments + "</h2>");
+      
+//         return newCard;
+//   }
+
+
+// });
+
+//   <div class="row">
+//   <div class="col-md-3">
+//     {{#each artist}}
+//     <div class="card" style="width: 18rem;">
+//       <img class="card-img-top" src="...">
+//       <div class="card-body">
+//         <h5 class="card-title">{{artistName}}</h5>
+//         <h3>{{loaction}}</h3>
+//         <h3>{{stylePref}}</h3>
+//         <h3>{{independent}}</h3>
+//         <p class="card-text">{{artistComments}}</p>
+//         <a href="/artist/:{{this.id}}" class="btn btn-primary"></a>
+//       </div>
+//     </div>
+//     {{/each}}
+//   </div>
+// </div>
+
+</script>
 
 </body></html>
