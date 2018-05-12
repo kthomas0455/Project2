@@ -6,70 +6,70 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     location: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     artistNumber: {
       type: DataTypes.INT,
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     independent: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     shopName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     hourlyRate: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     artistMin: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     stylePref: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     artistInsta: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     shopLink: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
-      },
+      }
     },
     artistBio: {
       type: DataTypes.TEXT,
@@ -78,6 +78,13 @@ module.exports = function(sequelize, DataTypes) {
         len: [1],
       },
     },
+    artistComments: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1],
+      }
+    }
   });
   return Post;
 };
