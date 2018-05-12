@@ -9,6 +9,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	background:none;
 }
 
+
 ol, ul {
 	list-style-type:none;
 }
@@ -307,7 +308,7 @@ a.btn:hover{
 	padding:0px 0px 0px 15px;
 	font-size:13px;
 	list-style-type:none;
-	background:url(../images/li.png) no-repeat left center;
+	background:url(images/li.png) no-repeat left center;
 }
 
 .left_side_bar .col_1 .box ul li a{
@@ -351,22 +352,28 @@ a.btn:hover{
 
 
 
-/*----Start Profile Page----*/
+/*----Start Artist Registry----*/
 
-/*
-.top_banner_profile {
-	margin: 0;
-}
-
-#header_profile{
-
+.card-body{
+	background-color: #101010;
 }
 
 
+.form-control{
+	background-color: #202020;
+	border-color: #101010;
+	border-width: .5px;
+}
 
+.card {
+	border-color: 0px;
+}
 
-*/
-
+#register_div{
+  margin: auto;
+  width: 70%;
+  border: 0px;
+}
 
 
 
