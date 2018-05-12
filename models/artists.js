@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     artistNumber: {
-      type: DataTypes.INT,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1],
