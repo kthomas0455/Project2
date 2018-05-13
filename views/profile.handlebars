@@ -4,14 +4,14 @@
         <div class="box">
           <h1 id="subhead" class="lobster">About Me:</h1>
           <ul>
-            <li><a href="#">Location</a></li>
-            <li><a href="#">Shop/Independant</a></li>
-            <li><a href="#">Hourly Rate</a></li>
-            <li><a href="#">Minimum</a></li>
-            <li><a href="#">Preffered Style</a></li>
+            <li>Location: {{artist.location}}</li>
+            <li>Shop/Independant Artist: {{artist.independent}}</a></li>
+            <li>Hourly Rate: {{artist.hourlyRate}}</li>
+            <li>Minimum: {{artist.artistMin}}</li>
+            <li>Preffered Style: {{artist.stylePref}}</li>
             <hr>
-            <li><a href="#">View Instagram</a></li>
-            <li><a href="#">Shop Website</a></li><br>
+            <li><a href="{{artist.artistInsta}}">View Instagram</a></li>
+            <li><a href="{{artist.shopLink}}">Shop Website</a></li><br>
           </ul>
         </div>
       </div>
@@ -24,25 +24,14 @@
 <div class="right_section">
 
     <div class="common_content">
-            <h1>{{artist.artistName}}</h1>
-            <h2>{{artist.loaction}}</h2>
-            <h2>{{artist.artistNumber}}</h2>
-            <h2>{{artist.indepndent}}</h2>
-            <h2>{{artist.shopName}}</h2>
-            <h2>{{artist.hourlyRate}}</h2>
-            <h2>{{artist.artistMin}}</h2>
-            <h2>{{artist.stylePref}}</h2>
-            <h2>{{artist.artistInsta}}</h2>
-            <h2>{{artist.shopLink}}</h2>
-            <h2>{{artist.loaction}}</h2>
 
-            <br><br>
-            <p>{{{artist.artistBio}}}</p>
-            <br><br>
+            <h1>{{{artist.artistName}}}</h1>
 
-            <br><br>
-            <p>{{{artist.artistComments}}}</p>
-            <br><br>
+            <h1>Bio: </h1>
+            <h2>{{{artist.artistBio}}}</h2>
+
+            <h1>Additional Comments: </h1>
+            <h2>{{{artist.artistComments}}}</h2>
     </div>
 
     <br><br> 
