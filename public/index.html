@@ -2,24 +2,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Think Ink | Profiles</title>
+<title>Think Ink | Find You Next Tattoo</title>
 
-    <!-- LINK TO CLEAR GOES HERE -->
-
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+ 
 
     <!-- Bootstrap -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
     <!-- LINK TO CSS GOES HERE -->
 
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 
     <!-- LINK TO JAVASCRIPT GOES HERE -->
 
 
+    <script src="assets/javascript/app.js"></script>
 
 
     <!-- LINK TO  font -->
@@ -49,8 +48,8 @@ font-family: 'Nunito', sans-serif;
 
   <div id="header_profile"> 
 
+ <img id="logo" src="images/ThinkInkLogo.png">
     <div class="top_banner_profile">
-      <img src="images/ThinkInkLogo.png">
       <div class="navigation">
       <ul style="margin-left: 650px;">
         <li><a href="#">Home</a></li>
@@ -58,6 +57,9 @@ font-family: 'Nunito', sans-serif;
       </ul><hr><br>
     </div>
     </div>
+
+
+   
    
 
     </div>
@@ -96,27 +98,88 @@ font-family: 'Nunito', sans-serif;
       <div class="common_content">
         <h2>Welcome</h2>
        
-        <p>Welcome to Think Ink. Here is how to use our service... Etiam ultricies nisi vel augue. Curabitur ullamcorperultricies nisi. Nam eget dui. Etiam ultricies nisi vel augue. Curabitur ullamcorperultricies nisi. Nam eget dui.Etiam ultricies nisi vel augue. Curabitur ullamcorperultricies nisi. Nam eget dui.</p>
+        <h4>Welcome to Think Ink. A catalog of tattoo artists at your fingertips. Get clicking to find your next tattoo.</h4>
         </div>
 
 
-      <div id="cardDiv" class="top_content">
+      <div class="top_content">
 
        
-        <!-- <div class="column_one">
-          <h2>Profiles Go Here</h2>
-          
-          <br>
-          
-          <p><a href="#">Add Profiles</a></p></div>
+
+<div class="col-md-5 column_one">
+                    {{#each artists}}
+                    <div id="size" class="card artist-card" style="width: 16rem;">
+                      <img class="card-img-top" src="...">
+                      <div class="card-body">
+                        <h2 class="card-title">{{artistName}}</h5>
+                        <h4>{{location}}</h4>
+                        <h4>{{stylePref}}</h4>
+             <h4>{{hourlyRate}}</h4>
+                        <h4>{{independent}}</h4>
+                        <p class="card-text">{{artistComments}}</p>
+                        <a href="/search/:{{this.id}}" class="btn btn-primary">Check them Out!</a>
+                      </div>
+                    </div>
+                    {{/each}}
+                </div>
+
+<div class="col-md-5 column_two">
+    {{#each artists}}
+    <div class="card artist-card" style="width: 16rem;">
+      <img class="card-img-top" src="...">
+      <div class="card-body">
+        <h2 class="card-title">{{artistName}}</h5>
+        <h4>{{location}}</h4>
+        <h4>{{stylePref}}</h4>
+<h4>{{hourlyRate}}</h4>
+        <h4>{{independent}}</h4>
+        <p class="card-text">{{artistComments}}</p>
+        <a href="/search/:{{this.id}}" class="btn btn-primary">Check them Out!</a>
+      </div>
+    </div>
+    {{/each}}
+</div>
+
+<div class="col-md-5 column_one">
+                    {{#each artists}}
+                    <div id="size" class="card artist-card" style="width: 16rem;">
+                      <img class="card-img-top" src="...">
+                      <div class="card-body">
+                        <h2 class="card-title">{{artistName}}</h5>
+                        <h4>{{location}}</h4>
+                        <h4>{{stylePref}}</h4>
+             <h4>{{hourlyRate}}</h4>
+                        <h4>{{independent}}</h4>
+                        <p class="card-text">{{artistComments}}</p>
+                        <a href="/search/:{{this.id}}" class="btn btn-primary">Check them Out!</a>
+                      </div>
+                    </div>
+                    {{/each}}
+                </div>
+
+<div class="col-md-5 column_two">
+    {{#each artists}}
+    <div class="card artist-card" style="width: 16rem;">
+      <img class="card-img-top" src="...">
+      <div class="card-body">
+        <h2 class="card-title">{{artistName}}</h5>
+        <h4>{{location}}</h4>
+        <h4>{{stylePref}}</h4>
+<h4>{{hourlyRate}}</h4>
+        <h4>{{independent}}</h4>
+        <p class="card-text">{{artistComments}}</p>
+        <a href="/search/:{{this.id}}" class="btn btn-primary">Check them Out!</a>
+      </div>
+    </div>
+    {{/each}}
+</div>
 
 
 
-        <div class="column_two border_left">
-          <h2>More Profiles Go Here</h2>
-          
-          <br>
-          <p><a href="#">Add Profiles</a></p></div> -->
+
+
+
+
       </div>
     </div>
 
@@ -129,65 +192,5 @@ font-family: 'Nunito', sans-serif;
   </div>
 
 </div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-<script src="assets/javascript/app.js"></script>
-
-<script type="text/javascript">
-
-  
-//   $(document).ready(function (){
-
-
-//       getArtists();
-
-//       function getArtists() {
-//         $.get("/api/posts/").then(function(data) {
-//           console.log("hit getartist function");
-
-//            for (var i = 0; i < data.length; i++) {
-//             createArtistCard(data[i]);
-//           }
-            
-//         })
-
-//       };
-
-
-//       function createArtistCard(artistData) {
-//         var div = $("#cardDiv");
-//         var newCard = div.addAttr("class", "card");
-
-//         newCard.data("artist", artistData);
-//         newCard.append("<h1>" + artistData.artistName + "</h1>");
-//         newCard.append("<h2> " + artistData.location + "</h2>");
-//         newCard.append("<h2> " + artistData.stylePref + "</h2>");
-//         newCard.append("<h2> " + artistData.comments + "</h2>");
-      
-//         return newCard;
-//   }
-
-
-// });
-
-//   <div class="row">
-//   <div class="col-md-3">
-//     {{#each artist}}
-//     <div class="card" style="width: 18rem;">
-//       <img class="card-img-top" src="...">
-//       <div class="card-body">
-//         <h5 class="card-title">{{artistName}}</h5>
-//         <h3>{{loaction}}</h3>
-//         <h3>{{stylePref}}</h3>
-//         <h3>{{independent}}</h3>
-//         <p class="card-text">{{artistComments}}</p>
-//         <a href="/artist/:{{this.id}}" class="btn btn-primary"></a>
-//       </div>
-//     </div>
-//     {{/each}}
-//   </div>
-// </div>
-
-</script>
 
 </body></html>

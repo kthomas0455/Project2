@@ -43,6 +43,8 @@ textarea {
 	resize:none;
 }
 
+/*
+text color is here*/
 body {
 	margin:0px;
 	padding:0px;
@@ -151,7 +153,6 @@ h6 {
 	background:url(../images/header.jpg) no-repeat left top;
 	height:390px;
 	padding:60px 95px 0 95px;
-/*	border:#6C8286 solid 1px;*/
 	margin-bottom:10px;
 }
 
@@ -177,11 +178,10 @@ h6 {
 	color:#c3dae0;
 }
 
-/*.navigation{
+.navigation{
+	margin-top: -45px;
 	margin-bottom:5px;
-	padding:13px 5px;
-	background: #363f4b; 
-}*/
+}
 
 .navigation ul{
 	margin:0px;
@@ -197,8 +197,10 @@ h6 {
 	border-right:#91969a dotted 1px; 
 }
 
+
+/*home and contact color*/
 .navigation ul li a{
-	color:#F5F5F5;
+	color:#56637f;
 	text-decoration:none;
 }
 
@@ -355,7 +357,9 @@ a.btn:hover{
 /*----Start Artist Registry----*/
 
 .card-body{
-	background-color: #101010;
+/*	background-color: #171717;*/
+/*	background-color: #9FB1B2;*/
+	background-color: #363f4b;
 }
 
 
@@ -375,9 +379,18 @@ a.btn:hover{
   border: 0px;
 }
 
+#logo{
+	width: 90px;
+}
 
 
 
+/*index page*/
+
+
+#size {
+	width: 50px;
+}
 
 
 
