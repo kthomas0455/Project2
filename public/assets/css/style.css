@@ -94,7 +94,7 @@ h6 {
 
 	/*  links
 	******************************/
-	a {color: #81c266;text-decoration: underline;}
+	a {color: #56637f;text-decoration: underline;}
 	a:hover {color: #81c266;text-decoration: none;}
 
 	/*  superscript and subscript
@@ -151,7 +151,7 @@ h6 {
 }
 
 #header .top_banner{
-	background:url(../images/header.jpg) no-repeat left top;
+/*	background:url(../images/header.jpg) no-repeat left top;*/
 	height:390px;
 	padding:60px 95px 0 95px;
 	margin-bottom:10px;
@@ -195,7 +195,7 @@ h6 {
 	display:inline;
 	font-size:14px;
 	list-style-type:none;
-	border-right:#91969a dotted 1px; 
+	border-right:#56637f solid 1px; 
 }
 
 
@@ -207,18 +207,12 @@ h6 {
 
 .navigation ul li a:hover{
 	text-decoration:underline;
+	color:#56637f;
 }
 
 .navigation ul li:last-child {
 	border-right:none;
 }
-
-.lobster {
-	font-family: 'Lobster', cursive;
-	text-align: left;
-	margin-left: 0;
-}
-
 
 /*----end header----*/
 
@@ -233,6 +227,7 @@ h6 {
 	float:right;
 }
 
+/*cards columns here*/
 #page_content .right_section .top_content{
 	padding:15px 0 0px 0;
 }
@@ -296,22 +291,21 @@ a.btn:hover{
 	padding:0px 0 20px 0;
 }
 
-.left_side_bar .col_1 .box{
+.left_side_bar .col_1 .box .box2 {
 	padding:10px 15px 5px;
 	border:#283032 solid 1px;
 }
 
-.left_side_bar .col_1 .box ul{
+.left_side_bar .col_1 .box .box2 ul{
 	margin:0px;
 	padding:0px;
 }
 
-.left_side_bar .col_1 .box ul li{
+.left_side_bar .col_1 .box .box2 ul li{
 	margin:0px 0px 8px;
 	padding:0px 0px 0px 15px;
 	font-size:13px;
 	list-style-type:none;
-	background:url(images/li.png) no-repeat left center;
 }
 
 .left_side_bar .col_1 .box ul li a{
@@ -358,8 +352,6 @@ a.btn:hover{
 /*----Start Artist Registry----*/
 
 .card-body{
-/*	background-color: #171717;*/
-/*	background-color: #9FB1B2;*/
 	background-color: #363f4b;
 }
 
@@ -388,6 +380,10 @@ a.btn:hover{
 
 /*home page*/
 
+#link {
+	font-size: 10px;
+}
+
 
 #size {
 	width: 50px;
@@ -397,7 +393,7 @@ a.btn:hover{
 	background:url(../../images/MainImage.png) no-repeat left center;
 	background-size: 900px;
 	background-position: top;
-	margin-top: -35px;
+	margin-top: -25px;
 }
 
 #bodyContainer{
@@ -405,7 +401,6 @@ a.btn:hover{
 }
 
 #footer_home {
-/*	padding-top: -15px;*/
 	clear:both;
 	margin-top:-10px;
 	padding:15px 0 0px 0;
@@ -417,9 +412,43 @@ a.btn:hover{
 	border-top:#525b60 solid 1px;
 }
 
+.slider{
+	margin-left: 252px;
+}
 
 
+.box2 {
+	margin-top: -307px;
+	height: 350px;
+	padding:10px 15px 5px;
+	border:#283032 solid 1px;
+}
 
+.box {
+	margin-top: -10px;
+	height: 200px;
+	padding:10px 15px 5px;
+	border:#283032 solid 1px;
+}
+
+.info{
+	font-size: 1.5em;
+}
+
+
+/*fonts*/
+
+.lobster {
+	font-family: 'Lobster', cursive;
+	text-align: left;
+	margin-left: 0;
+}
+
+.lobster2 {
+	font-family: 'Lobster Two', cursive;
+	text-align: left;
+	margin-left: 0;
+}
 
 
 
