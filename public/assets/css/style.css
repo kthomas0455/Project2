@@ -34,8 +34,9 @@ table {
 input, textarea, select {
 	font:12px Arial, Helvetica, sans-serif;
 	vertical-align:middle;
-	padding:0;
+	padding:4;
 	margin:0;
+	height: 3em;
 }
 
 textarea {
@@ -385,12 +386,39 @@ a.btn:hover{
 
 
 
-/*index page*/
+/*home page*/
 
 
 #size {
 	width: 50px;
 }
+
+#image{
+	background:url(../../images/MainImage.png) no-repeat left center;
+	background-size: 900px;
+	background-position: top;
+	margin-top: -35px;
+}
+
+#bodyContainer{
+	margin-left: 40px;
+}
+
+#footer_home {
+/*	padding-top: -15px;*/
+	clear:both;
+	margin-top:-10px;
+	padding:15px 0 0px 0;
+	height:25px;
+	text-align:center;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	line-height:19px;
+	border-top:#525b60 solid 1px;
+}
+
+
+
 
 
 
