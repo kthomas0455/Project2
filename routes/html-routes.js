@@ -21,6 +21,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/register.html"));
   });
 
+ app.get("/contact", function(req, res) {
+    res.render("contact");
+  });
+
   app.get("/search/:id", function(req, res) {
 
     db.artists.findAll({
