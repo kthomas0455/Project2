@@ -41,22 +41,21 @@
 
 
       <div class="top_content">
-
-				<div class="col-md-3">
+      <div class="row">
+				<div class="col-md-5">
 					{{#each artists}}
 					<div class="card artist-card" style="width: 18rem;">
-					  <img class="card-img-top" src="/images/artist-images/{{artistName}}/{{artistName}}1.jpg" style="width: 100%; height: 250px;">
+					  <img class="card-img-top" src="/images/artist-images/{{artistName}}/{{artistName}}1.jpg" style="width: 100%; height: 200px;">
 					  <div class="card-body">
-					    <h2 class="card-title">{{artistName}}</h5>
-					    <h4>{{location}}</h4>
-					    <h4>{{stylePref}}</h4>
-              <h4>{{hourlyRate}}</h4>
-					    <h4>{{independent}}</h4>
-					    <p class="card-text">{{{artistComments}}}</p>
-					    <a href="/search/{{this.id}}" class="btn btn-primary">Check them Out!</a>
+					    <h2 class="card-title text-center" style="font-size: 18px; font-weight: bold; margin: 5px; 5px; 5px; 0px;">{{artistName}}</h2>
+					    <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 5px;">{{location}}</h4>
+					    <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 5px;">Preferred Style: {{stylePref}}</h4>
+              <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 15px;">Hourly Rate ($/hr): {{hourlyRate}}</h4>
+					    <a href="/search/{{this.id}}" class="btn btn-primary btn-center" style="margin-left: 75px; margin-bottom: 15px;">Check them Out!</a>
 					  </div>
 					</div>
 					{{/each}}
 				</div>
+      </div>
       </div>
     </div>
