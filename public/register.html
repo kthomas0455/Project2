@@ -52,39 +52,63 @@
       	<form>
         <div class="form-group">
           <label for="exampleFormControlInput1">Artist Name:</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+          <input type="text" class="form-control" id="name" placeholder="Name">
         </div>
         <div class="form-group">
           <label for="exampleFormControlInput1">Location(Zip Code):</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Location">
+          <input type="text" class="form-control" id="location" placeholder="Location">
         </div>
         <div class="form-group">
-          <label for="exampleFormControlInput1">Independent/Shop:</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Independent/Shop">
+          <label for="exampleFormControlInput1">Contact Info: (phone number with area code ex: 19161112222)</label>
+          <input type="text" class="form-control" id="number" placeholder="Contact Info">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Independent or Shop Artist:</label>
+          <select class="form-control" id="independent">
+            <option>Independent</option>
+            <option>Shop</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="exampleFormControlInput1">Shop Name:</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Shop Name">
+          <input type="text" class="form-control" id="shopName" placeholder="Tattoo Shop Name, if N/A leave blank">
         </div>
         <div class="form-group">
-          <label for="exampleFormControlInput1">Preferred Tattoo Style:</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Tattoo Style">
+          <label for="exampleFormControlInput1">Shop Link:</label>
+          <input type="text" class="form-control" id="shopLink" placeholder="Tattoo Shop Link, if N/A leave blank">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Preferred Style: </label>
+          <select class="form-control" id="style">
+            <option>Black Work</option>
+            <option>Japanese</option>
+            <option>Minimalist</option>
+            <option>New School</option>
+            <option>Realist</option>
+            <option>Traditional</option>
+            <option>Tribal</option>
+            <option>Watercolor</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="exampleFormControlInput1">Hourly Rate:</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Rate">
+          <input type="text" class="form-control" id="rate" placeholder="$/hr, enter integers">
         </div>
         <div class="form-group">
-          <label for="exampleFormControlInput1">Contact Info:</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Contact Info">
+          <label for="exampleFormControlInput1">Tattoo Minimum Cost:</label>
+          <input type="text" class="form-control" id="min" placeholder="Tattoo minimum amount cost, enter integers.">
         </div>
         <div class="form-group">
           <label for="exampleFormControlInput1">Instagram Link:</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Instagram Link">
+          <input type="text" class="form-control" id="igLink" placeholder="Instagram Link">
         </div>
         <div class="form-group">
-          <label for="exampleFormControlTextarea1">Bio:</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <label for="exampleFormControlTextarea1">Short Bio:</label>
+          <textarea class="form-control" id="bio" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Additional Comments: (aka deposit, other styles, etc.)</label>
+          <textarea class="form-control" id="comments" rows="3"></textarea>
         </div>
 
         <a href="/">
@@ -107,6 +131,44 @@
 
 </div>
 
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+$('#search-button').on('click', function() {
+        
+        event.preventDefault();
+
+        var hrlyValue = $('#rate').val().trim();
+        var minValue = $('#min').val().trim();
+
+        var artistData = {
+            artistName: $('#name').val().trim(),
+            location: $('#location').val().trim(),
+            artistNumber: $('#number').val().trim(),
+            independent: $('#independent').val().trim(),
+            shopName: $('#shopName').val().trim(),
+            hourlyRate: parseInt(hrlyValue),
+            artistMin: parseInt(minValue),
+            stylePref: $('#style').val().trim(),
+            artistInsta: $('#igLink').val().trim(),
+            shopLink: $('#shopLink').val().trim(),
+            artistBio: $('#bio').val().trim(),
+            artistComments: $('#comments').val().trim()
+        };
+
+        $.ajax('/api/posts', {
+            type: "POST",
+            data: artistData
+        }).then(function(result)  {
+            
+            alert("Thank you! You have been added to our Artist Database.");
+        }
+        )
+    });
+
+</script>
 </body>
 </html>
