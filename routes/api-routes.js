@@ -68,10 +68,11 @@ module.exports = function(app) {
       });
   });
 
+// changed to "/register", didnt work -- Tanner, thought since that route is where the db is posting on our page it would add it, but no. Also tried your route below, didn't work.
   // POST route for saving a new artist
   app.post("/api/posts", function(req, res) {
     console.log(req.body);
-    db.artist
+    db.artists
       .create({
         artistName: req.body.artistName,
         location: req.body.location,
@@ -85,8 +86,8 @@ module.exports = function(app) {
         shopLink: req.body.shopLink,
         artistBio: req.body.artistBio,
       })
-      .then(function(dbArtist) {
-        res.json(dbArtist);
+      .then(function(dbArtists) {
+        res.json(dbArtists);
       });
   });
 };
