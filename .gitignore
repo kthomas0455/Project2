@@ -1,2 +1,6 @@
 node_modules/
+<<<<<<< HEAD:.gitignore
 .DS_Store
+=======
+.DS_Store
+>>>>>>> 2ad1d9bab8598e05d85e2290eeaa23aabf62bc0f:.gitignore

@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <title>Think Ink | Find Your Next Tattoo</title>
 
-    <!-- LINK TO CLEAR GOES HERE -->
-
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+ 
 
     <!-- Bootstrap -->
 
@@ -15,12 +13,7 @@
 
     <!-- LINK TO CSS GOES HERE -->
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-
-    <!-- LINK TO JAVASCRIPT GOES HERE -->
-
-
-    <script src="assets/javascript/app.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
 
     <!-- LINK TO  font -->
@@ -50,42 +43,103 @@ font-family: 'Nunito', sans-serif;
 
   <div id="headerHome"> 
 
-    <div class="top_banner">
-      <img src="images/ThinkInkLogo.png">
+    <img id="logo" src="images/ThinkInkLogo.png">
+    <div class="top_banner_profile">
+      <div class="navigation">
+      <ul style="margin-left: 650px;">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul><hr><br>
+    </div>
+ </div>
 
 
+<div class="top_banner">
+
+<div id="image">
 
 <div id="bodyContainer">
 
-        <img id="logo" src="assets/images/ThinkInkLogo.png" alt=""></img>
-
             <div id="search-bar">
-                <p class="welcome">Find a tattoo artist near me</p>
+                <h2 style="padding-top: 46%; padding-bottom: 1%;" class="welcome lobster2">Find a tattoo artist near me</h2>
                 <div id="search">
                     <input id="userCity" class="text-center" type="text" placeholder="Enter your zip code" required>
+                <a href="/search">
                     <button class="btn btn-outline-secondary" id="search-btn" type=" button ">Go</button>
-                </div>
-
-            <p id="link">I am a tattoo artist</p>
+                </a>
+                </div><br>
+            
+               <div id="home_link"> <a href="/register.html">
+                <a href="register.html"><p id="link" style="padding-top: 0%; padding-bottom: 6%;">
+                Click here to make an artist profile</p>
+                </a></div>
     </div>
+ </div>
 
 
 
-
-
-    </div>
-	
-
-
+ </div>
 
     <div class="clear"></div>
-    
-    <div id="footer">Copyright &copy; ThinkInk 2018. 
+    <div id="footer_home">Copyright &copy; ThinkInk 2018. 
     
     </div>
 	
   </div>
 
 </div>
+
+<script>
+
+// testing geolocation 
+// var x = document.getElementById("demo");
+
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(showPosition);
+//     } else {
+//         x.innerHTML = "Geolocation is not supported by this browser.";
+//     }
+// }
+
+// function showPosition(position) {
+//     x.innerHTML = "Latitude: " + position.coords.latitude + 
+//     "<br>Longitude: " + position.coords.longitude; 
+// }
+
+// function showError(error) {
+//     switch(error.code) {
+//         case error.PERMISSION_DENIED:
+//             x.innerHTML = "User denied the request for Geolocation."
+//             break;
+//         case error.POSITION_UNAVAILABLE:
+//             x.innerHTML = "Location information is unavailable."
+//             break;
+//         case error.TIMEOUT:
+//             x.innerHTML = "The request to get user location timed out."
+//             break;
+//         case error.UNKNOWN_ERROR:
+//             x.innerHTML = "An unknown error occurred."
+//             break;
+//     }
+// }
+
+// console.log(getLocation());
+// console.log(showPosition(position));
+// console.log(showError(error));
+
+// $('#search-btn').on("click", function() {
+//         event.preventDefault();
+
+//         var location = {
+
+
+  
+//                     };
+
+//             module.exports = location;
+//     });
+
+</script>
 
 </body></html>
