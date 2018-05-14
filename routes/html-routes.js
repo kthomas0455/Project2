@@ -60,7 +60,7 @@ module.exports = function(app) {
         ],
       })
       .then(function(dbArtists) {
-        res.render("lowest", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
@@ -74,7 +74,7 @@ module.exports = function(app) {
         ],
       })
       .then(function(dbArtists) {
-        res.render("highest", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
@@ -88,7 +88,7 @@ app.get("/traditional", function(req, res) {
         },
       })
       .then(function(dbArtists) {
-        res.render("traditional", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
@@ -101,7 +101,7 @@ app.get("/tribal", function(req, res) {
         },
       })
       .then(function(dbArtists) {
-        res.render("tribal", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
@@ -114,7 +114,7 @@ app.get("/japanese", function(req, res) {
         },
       })
       .then(function(dbArtists) {
-        res.render("japanese", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
@@ -127,7 +127,7 @@ app.get("/blackwork", function(req, res) {
         },
       })
       .then(function(dbArtists) {
-        res.render("blackwork", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
@@ -140,7 +140,7 @@ app.get("/minimalist", function(req, res) {
         },
       })
       .then(function(dbArtists) {
-        res.render("minimalist", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
@@ -153,7 +153,7 @@ app.get("/new-school", function(req, res) {
         },
       })
       .then(function(dbArtists) {
-        res.render("new-school", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
@@ -166,7 +166,7 @@ app.get("/realist", function(req, res) {
         },
       })
       .then(function(dbArtists) {
-        res.render("realist", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
@@ -179,7 +179,7 @@ app.get("/watercolor", function(req, res) {
         },
       })
       .then(function(dbArtists) {
-        res.render("watercolor", {artists: dbArtists});
+        res.render("index", {artists: dbArtists});
       });
 
   });
