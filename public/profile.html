@@ -136,51 +136,6 @@ font-family: 'Nunito', sans-serif;
 
 </div>
 
-<div id="page_content"> 
-  
-    <div class="left_side_bar"> 
 
-      <div class="col_1">
-        <div class="box">
-           <div class="lobster info" class="lobster">Filter Results By:</div><br>
-            <ul>
-            <li><h5 style="padding-top: 10px; text-decoration: none;">Price - Lowest to Highest</h5></li>
-            <li><h5 style="padding-top: 10px; text-decoration: none;">Price - Highest to lowest</h5></li>
-            <li><h5 style="padding-top: 10px; text-decoration: none;">Specialty</h5></li>
-            <li><h5 style="padding-top: 10px; text-decoration: none;">Location</h5></li>
-            </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="right_section">
-      <div class="common_content">
-        <h2 class="lobster">Welcome</h2>
-       
-        <h4>Welcome to Think Ink. A catalog of tattoo artists at your fingertips.</h4>
-      </div>
-
-
-      <div class="top_content">
-
-        <div class="col-md-3">
-          {{#each artists}}
-          <div class="card artist-card" style="width: 18rem;">
-            <img class="card-img-top" src="/images/artist-images/{{artistName}}/{{artistName}}1.jpg">
-            <div class="card-body">
-              <h2 class="card-title">{{artistName}}</h5>
-              <h4>{{location}}</h4>
-              <h4>{{stylePref}}</h4>
-              <h4>{{hourlyRate}}</h4>
-              <h4>{{independent}}</h4>
-              <p class="card-text">{{{artistComments}}}</p>
-              <a href="/search/{{this.id}}" class="btn btn-primary">Check them Out!</a>
-            </div>
-          </div>
-          {{/each}}
-        </div>
-      </div>
-    </div>
 
 </body></html>
