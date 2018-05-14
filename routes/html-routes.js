@@ -51,4 +51,32 @@ module.exports = function(app) {
     
   });
 
+  app.get("/lowest-to-highest", function(req, res) {
+
+    db.artists.findAll({
+        order: [
+          db.sequelize.fn("isnull", db.sequelize.col("hourlyRate")),
+          ["hourlyRate", "ASC"],
+        ],
+      })
+      .then(function(dbArtists) {
+        res.render("lowest", {artists: dbArtists});
+      });
+
+  });
+
+  app.get("/highest-to-lowest", function(req, res) {
+
+    db.artists.findAll({
+        order: [
+          db.sequelize.fn("isnull", db.sequelize.col("hourlyRate")),
+          ["hourlyRate", "DESC"],
+        ],
+      })
+      .then(function(dbArtists) {
+        res.render("highest", {artists: dbArtists});
+      });
+
+  });
+
 };

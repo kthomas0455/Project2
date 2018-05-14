@@ -41,7 +41,7 @@ module.exports = function(app) {
 
   // Get route for returning(SORTING) posts of a ASCENDING hourly rate
   // The same route will be used to sort artists by other parameters
-  app.get("/api/posts/hourlyRate/:hourlyRate", function(req, res) {
+  app.get("/api/posts/hourlyRate/highest", function(req, res) {
     db.artist
       .findAll({
         order: [
@@ -56,7 +56,7 @@ module.exports = function(app) {
 
   // Get route for returning(SORTING) posts of a DESCENDING hourly rate
   // The same route will be used to sort artists by other parameters
-  app.get("/api/posts/hourlyRate/:hourlyRate", function(req, res) {
+  app.get("/api/posts/hourlyRate/lowest", function(req, res) {
     db.artist
       .findAll({
         order: [
