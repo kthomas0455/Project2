@@ -57,15 +57,14 @@ module.exports = function(app) {
   // Get route for returning(SORTING) posts of a DESCENDING hourly rate
   // The same route will be used to sort artists by other parameters
   app.get("/api/posts/hourlyRate/lowest", function(req, res) {
-    db.artist
-      .findAll({
+    db.artists.findAll({
         order: [
-          sequelize.fn("isnull", sequelize.col("hourlyRate")),
+          db.sequelize.fn("isnull", db.sequelize.col("hourlyRate")),
           ["hourlyRate", "DESC"],
         ],
       })
-      .then(function(dbArtist) {
-        res.json(dbArtist);
+      .then(function(dbArtists) {
+        res.json(dbArtists);
       });
   });
 
