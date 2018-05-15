@@ -37,14 +37,14 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: true,
       },
       hourlyRate: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
           len: [1],
         },
       },
       artistMin: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
           len: [1],

@@ -38,10 +38,10 @@
             <div class="navigation">
               <ul style="margin-left: 650px;">
                 <li>
-                  <a href="home.html">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="#">Contact</a>
+                  <a href="/contact">Contact</a>
                 </li>
               </ul>
               <hr>
@@ -61,28 +61,34 @@
                     <form id="register">
                       <div class="form-group">
                         <!-- artist -->
-                        <label for="name">Artist Name:</label>
+                        <label for="name" style="font-size: 16px;">Artist Name: [required]</label>
                         <input type="text" class="form-control" id="name" placeholder="Name">
+                        <br>
                         <!-- location -->
-                        <label for="location">Location(Zip Code):</label>
-                        <input type="text" class="form-control" id="location" placeholder="Location">
+                        <label for="location" style="font-size: 16px;">Location: [required]</label>
+                        <input type="text" class="form-control" id="location" placeholder="Zip Code">
+                        <br>
                         <!-- phone number -->
-                        <label for="number">Contact Info: (phone number with area code ex: 19161112222)</label>
-                        <input type="text" class="form-control" id="number" placeholder="Contact Info">
+                        <label for="number" style="font-size: 16px;">Contact Phone Info: [required]</label>
+                        <input type="text" class="form-control" id="number" placeholder="phone number with area code ex: 19161112222">
+                        <br>
                         <!-- independent or shop -->
-                        <label for="exampleFormControlInput1">Independent or Shop Artist:</label>
+                        <label for="exampleFormControlInput1" style="font-size: 16px;">Independent or Shop Artist: [required]</label>
                         <select class="form-control" id="independent">
                           <option>Independent</option>
                           <option>Shop</option>
                         </select>
+                        <br>
                         <!-- shop name -->
-                        <label for="shopName">Shop Name:</label>
+                        <label for="shopName" style="font-size: 16px;">Shop Name:</label>
                         <input type="text" class="form-control" id="shopName" placeholder="Tattoo Shop Name, if N/A leave blank">
+                        <br>
                         <!-- shop link -->
-                        <label for="shopLink">Shop Link:</label>
+                        <label for="shopLink" style="font-size: 16px;">Shop Link:</label>
                         <input type="text" class="form-control" id="shopLink" placeholder="Tattoo Shop Link, if N/A leave blank">
+                        <br>
                         <!-- style pref -->
-                        <label for="style">Preferred Style: </label>
+                        <label for="style" style="font-size: 16px;">Preferred Style: [required]</label>
                         <select class="form-control" id="style">
                           <option>Black Work</option>
                           <option>Japanese</option>
@@ -93,23 +99,29 @@
                           <option>Tribal</option>
                           <option>Watercolor</option>
                         </select>
+                        <br>
                         <!-- hourly rate -->
-                        <label for="rate">Hourly Rate:</label>
+                        <label for="rate" style="font-size: 16px;">Hourly Rate: [required]</label>
                         <input type="text" class="form-control" id="rate" placeholder="$/hr, enter integers">
+                        <br>
                         <!-- tattoo min -->
-                        <label for="min">Tattoo Minimum Cost:</label>
+                        <label for="min" style="font-size: 16px;">Tattoo Minimum Cost: [required]</label>
                         <input type="text" class="form-control" id="min" placeholder="Tattoo minimum amount cost, enter integers.">
+                        <br>
                         <!-- instagram link -->
-                        <label for="igLink">Instagram Link:</label>
+                        <label for="igLink" style="font-size: 16px;">Instagram Link: [required]</label>
                         <input type="text" class="form-control" id="igLink" placeholder="Instagram Link">
+                        <br>
                         <!-- bio -->
-                        <label for="bio">Short Bio:</label>
+                        <label for="bio" style="font-size: 16px;">Short Bio: [required]</label>
                         <textarea class="form-control" id="bio" rows="3"></textarea>
+                        <br>
                         <!-- additional comments -->
-                        <label for="comments">Additional Comments: (aka deposit, other styles, etc.)</label>
+                        <label for="comments" style="font-size: 16px;">Additional Comments: [aka deposit, other styles, etc.]</label>
                         <textarea class="form-control" id="comments" rows="3"></textarea>
+                        <br>
 
-                        <button type="submit" class="btn btn-success submit btn-lg">Submit</button>
+                        <button class="btn btn-outline-secondary submit btn-lg" type="submit">Submit</button>
                       </div>
                     </form>
                   </div>
