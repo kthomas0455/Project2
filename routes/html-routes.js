@@ -42,7 +42,8 @@ module.exports = function(app) {
 		// search artists whose address have teh zip code to search by
 		db.artists
 			.findAll({
-				where: { location: { $like: `${req.params.zipcode}` } }sequelize.where(sequelize.fn('LOWER', sequelize.col('asset_name')), 'LIKE', '%' + lookupValue + '%')
+				where: { location: { $like: `${req.params.zipcode}` } }
+				// sequelize.where(sequelize.fn('LOWER', sequelize.col('asset_name')), 'LIKE', '%' + lookupValue + '%')
 			})
 			.then(dbArtists => {
 				res.render('index', { artist: dbArtists });
