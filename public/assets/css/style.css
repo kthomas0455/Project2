@@ -397,13 +397,15 @@ a.btn:hover{
 
 #image{
 	background:url(../../images/MainImage.png) no-repeat left center;
-	background-size: 900px;
+	background-size: cover;
+	background-size: 100%;
 	background-position: top;
-	margin-top: -25px;
+
 }
 
 #bodyContainer{
 	margin-left: 40px;
+	position: relative;
 }
 
 #footer_home {
@@ -442,7 +444,6 @@ a.btn:hover{
 }
 
 
-/*fonts*/
 
 .lobster {
 	font-family: 'Lobster', cursive;
@@ -456,7 +457,29 @@ a.btn:hover{
 	margin-left: 0;
 }
 
+/*breakpoints for main page */
 
+@media screen and (max-width : 929px) {
+		#bodyContainer{
+		margin-left: 100px;
+		position: relative;
+}
+
+/*@media only screen and (max-width : 1190px) {
+	#bodyContainer{
+	margin-left: 110px;
+
+	}
+}
+
+@media screen and (max-width : 1500px) {
+	#bodyContainer{
+	margin-left: -110px;
+
+	}
+}*/
+	
+}
 
 
 
