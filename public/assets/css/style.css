@@ -238,6 +238,12 @@ h6 {
 	margin-bottom:20px;
 }
 
+.card-row .card-content {
+	width: 600px;
+	float:left;
+	margin-bottom:20px;
+}
+
 #page_content .right_section .top_content .column_two{
 	width:300px;
 	float:right;

@@ -1,34 +1,38 @@
 
-<div class="left_side_bar"> 
+
+<div id="page_content"> 
+    <div class="left_side_bar"> 
       <div class="col_1">
-        <div class="box">
-          <h1 id="subhead" class="lobster">About Me:</h1>
-          <ul>
-            <li>Location: {{artist.location}}</li>
-            <li>Shop/Independant Artist: {{artist.independent}}</a></li>
-            <li>Hourly Rate ($/hr): {{artist.hourlyRate}}</li>
-            <li>Minimum ($): {{artist.artistMin}}</li>
-            <li>Preffered Style: {{artist.stylePref}}</li>
-            <hr>
-            <li><a href="{{artist.artistInsta}}">View Instagram</a></li>
-            <li><a href="{{artist.shopLink}}">Shop Website</a></li><br>
-          </ul>
-        </div>
+        <div class="box2" style="margin-top: 10px;">
+          <div class="lobster info">Artist Info:</div>
+                        <div style="padding-top: 19px; text-decoration: none;"><h5>Location: {{artist.location}}</h5></div>
+                        <div></div>
+                        <div style="padding-top: 10px; text-decoration: none;"><h5>Shop or Independent Artist: {{artist.independent}}</h5></div>
+                        <div></div>
+                        <div style="padding-top: 10px; text-decoration: none;"><h5>Hourly Rate ($/hr): {{artist.hourlyRate}}</h5></div>
+                        <div></div>
+                        <div style="padding-top: 10px; text-decoration: none;"><h5>Shop Minimum ($): {{artist.artistMin}}</h5></div>
+                        <div></div>
+                        <div style="padding-top: 10px; text-decoration: none;"><h5>Preffered Style: {{artist.stylePref}}</h5></div>
+                        <div></div>
+                        <div  style="padding-top: 10px;">
+                        <a href="{{artist.artistInsta}}" class="card-link">View Instagram </a><br><br>
+                        <a href="{{artist.shopLink}}" class="card-link">Contact Shop </a>
+                        </div>
+          </div>
       </div>
-
-</div>
-
+  </div>
 
 
 <!-- Artist Name -->
 <div class="right_section">
 
-    <div class="common_content">
+    <div class="common_content" style="margin-top: 10px;">
+    <h1 id="artist_name" class="lobster"><div id="artist_name">{{{artist.artistName}}}</div></h1>
 
-    <h1>{{{artist.artistName}}}</h1>
     <br>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-bottom: 40px;">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -56,11 +60,11 @@
     </div>
 
 
-            <h1>Bio: </h1>
-            <h2>{{{artist.artistBio}}}</h2>
+            <h1 id="artist_name" class="lobster" style="margin-top: 15px;">Bio: </h1>
+            <p>{{{artist.artistBio}}}</p>
 
-            <h1>Additional Comments: </h1>
-            <h2>{{{artist.artistComments}}}</h2>
+            <h1 id="artist_name" class="lobster" style="margin-top: 15px;">Additional Comments: </h1>
+            <p>{{{artist.artistComments}}}</p>
     </div>
 
     <br><br> 

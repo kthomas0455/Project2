@@ -2,7 +2,7 @@
 <div class="left_side_bar"> 
 
       <div class="col_1">
-        <div class="box">
+        <div class="box" style="margin-top: 10px;">
           <h1 id="subhead" class="lobster">Filter results by:</h1>
           <ul>
             <li><a href="/highest-to-lowest">Price - Highest to lowest</a></li>
@@ -33,16 +33,13 @@
     </div>
 
     <div class="right_section">
-      <div class="common_content">
+      <div class="common_content" style="margin-top: 10px;">
         <h2>Welcome</h2>
        
         <p>Welcome to Think Ink. A catalog of tattoo artists at your fingertips.</p>
         </div>
 
 
-      <div class="top_content">
-      <div class="row">
-				<div class="col-md-5">
 					{{#each artists}}
 					<div class="card artist-card" style="width: 18rem;">
 					  <img class="card-img-top" src="/images/artist-images/{{artistName}}/{{artistName}}1.jpg" style="width: 100%; height: 200px;">
@@ -51,11 +48,8 @@
 					    <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 5px;">{{location}}</h4>
 					    <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 5px;">Preferred Style: {{stylePref}}</h4>
               <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 15px;">Hourly Rate ($/hr): {{hourlyRate}}</h4>
-					    <a href="/search/{{this.id}}" class="btn btn-primary btn-center" style="margin-left: 75px; margin-bottom: 15px;">Check them Out!</a>
+					    <a href="/search/{{this.id}}" class="btn btn-primary btn-center" style="margin-left: 80px; margin-bottom: 15px;">Check them Out!</a>
 					  </div>
 					</div>
 					{{/each}}
-				</div>
-      </div>
-      </div>
     </div>
