@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 
@@ -9,24 +10,26 @@
 
 <title>Think Ink | Find Your Next Tattoo</title>
 
- 
+  <!-- Bootstrap -->
 
-    <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <!-- LINK TO CSS GOES HERE -->
 
-    <!-- LINK TO CSS GOES HERE -->
-
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-
-
-    <!-- LINK TO  font -->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
 
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet">
+  <!-- Link to javascript -->
+  <script src="assets/javascript/app.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe56kBedEPlgT_NnffILHycZisGKnUznQ&libraries=geometry"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Open+Sans" rel="stylesheet">
+
+  <!-- LINK TO  font -->
+
+
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet">
 
 </head>
 
@@ -42,11 +45,14 @@
         <div id="bodyContainer">
 
             <div id="search-bar">
-                <h2 style="padding-top: 46%; padding-bottom: 1%;" class="welcome lobster2">Find a tattoo artist near me</h2>
-                <div id="search">
-                    <input id="userCity" class="text-center" type="text" placeholder="Enter your zip code" required>
-                <a href="/search">
-                    <button class="btn btn-outline-secondary" id="search-btn" type=" button ">Go</button>
+              <h2 style="padding-top: 46%; padding-bottom: 1%;" class="welcome lobster2">Find a tattoo artist near me</h2>
+              <div id="search">
+                <input id="userCity" class="text-center" type="text" placeholder="Enter your zip code" required>
+                <!-- <a href="/search"> -->
+                <button class="btn btn-outline-secondary" id="search-btn" type=" button ">Go</button>
+                <!-- </a> -->
+                <a href="">
+                  <button class="btn btn-outline-secondary" id="findMe" type=" button ">Find Me</button>
                 </a>
                 </div><br>
             
@@ -62,6 +68,19 @@
 
 <script>
 
+      $('#search-btn').on('click', function (event) {
+        event.preventDefault();
+        let userZip = $('#userCity').val()
+        if (!userZip) {
+          $.get('/search').then((res) => {
+            document.write(res)
+          })
+        } else {
+          $.get(`/search/zipcode/${userZip}`).then((res) => {
+            document.write(res)
+          })
+        }
+      })
 // testing geolocation 
 // var x = document.getElementById("demo");
 
@@ -105,12 +124,14 @@
 //         var location = {
 
 
-  
+
 //                     };
 
 //             module.exports = location;
 //     });
 
-</script>
+    </script>
 
-</body></html>
+</body>
+
+</html>
