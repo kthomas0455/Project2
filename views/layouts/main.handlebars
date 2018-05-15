@@ -77,4 +77,41 @@ font-family: 'Nunito', sans-serif;
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+<script type="text/javascript">
+
+$(document).ready(function (){
+
+
+
+function sendSMS(fieldReq1, fieldReq2) {
+
+
+};
+
+    
+    //create new burger to be eaten
+    $('#text-button').on("click", function() {
+        event.preventDefault();
+        
+        var x = $('#customer-number').val().trim();
+        var y = $('#customer-message').val().trim();
+        
+        if (x !== '' || y !== '') {
+
+            sendSMS(x,y);
+            alert("Congratulations, your message has been sent!");          
+        }
+
+        else {
+
+          return alert("Please fill out both fields in order to send the artist an SMS message.");
+          }
+
+    });
+
+});
+
+
+</script>
+
 </body></html>
