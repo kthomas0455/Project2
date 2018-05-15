@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   //Basic posting to database. More can be added at any time
+
   var Artist = sequelize.define(
     "artists",
     {
