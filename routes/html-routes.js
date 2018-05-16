@@ -4,37 +4,47 @@
 
 // Dependencies
 // =============================================================
-var db = require('../models');
+var db = require("../models");
 
-var path = require('path');
+var path = require("path");
 
 // Routes
 // =============================================================
 module.exports = function (app) {
 	// Each of the below routes just handles the HTML page that the user gets sent to.
 
-	app.get('/', function (req, res) {
-		res.sendFile(path.join(__dirname, '../public/home.html'));
+	app.get("/", function (req, res) {
+		res.sendFile(path.join(__dirname, "../public/home.html"));
 	});
 
-	app.get('/register', function (req, res) {
-		res.sendFile(path.join(__dirname, '../public/register.html'));
+	app.get("/register", function (req, res) {
+		res.sendFile(path.join(__dirname, "../public/register.html"));
 	});
 
-	app.get('/contact', function (req, res) {
-		res.render('contact');
+	app.get("/contact", function (req, res) {
+		res.render("contact");
 	});
 
-	app.get('/search/:id', function (req, res) {
+	app.get("/search/:id", function (req, res) {
 		db.artists
 			.findAll({
 				where: {
-					id: req.params.id
-				}
+					id: req.params.id,
+				},
 			})
 			.then(function (dbArtists) {
-				res.render('profile', { artist: dbArtists[0] });
+				res.render("profile", { artist: dbArtists[0] });
 			});
+	});
+
+	app.get("/search", function (req, res) {
+		// geocoder section here
+
+		// get stuff from artists table
+		db.artists.findAll({}).then(function (dbArtists) {
+			res.render("index", { artists: dbArtists });
+		});
+		// var artists = []
 	});
 
 	// Search route to handle searching by zipcode
@@ -42,143 +52,132 @@ module.exports = function (app) {
 		// search artists whose address have teh zip code to search by
 		db.artists
 			.findAll({
-				where: { location: { $like: `${req.params.zipcode}` } }
+				where: { location: { $like: `%${req.params.zipcode}%` } }
 				// sequelize.where(sequelize.fn('LOWER', sequelize.col('asset_name')), 'LIKE', '%' + lookupValue + '%')
-			})
-			.then(dbArtists => {
-				res.render('index', { artist: dbArtists });
-			});
+			}).then(dbArtists => { res.render('index', { artists: dbArtists }) }
+				// .then(dbArtists => res.status(200).send(dbArtists));
+			)
 	});
 
-	app.get('/search', function (req, res) {
-		// geocoder section here
-
-		// get stuff from artists table
-		db.artists.findAll({}).then(function (dbArtists) {
-			res.render('index', { artists: dbArtists });
-		});
-		// var artists = []
-	});
-
-	app.get('/lowest-to-highest', function (req, res) {
+	app.get("/lowest-to-highest", function (req, res) {
 		db.artists
 			.findAll({
 				order: [
-					db.sequelize.fn('isnull', db.sequelize.col('hourlyRate')),
-					['hourlyRate', 'ASC']
-				]
+					db.sequelize.fn("isnull", db.sequelize.col("hourlyRate")),
+					["hourlyRate", "ASC"],
+				],
 			})
 			.then(function (dbArtists) {
-				res.render('lowest', { artists: dbArtists });
+				res.render("index", { artists: dbArtists });
 			});
 	});
 
-	app.get('/highest-to-lowest', function (req, res) {
+	app.get("/highest-to-lowest", function (req, res) {
 		db.artists
 			.findAll({
 				order: [
-					db.sequelize.fn('isnull', db.sequelize.col('hourlyRate')),
-					['hourlyRate', 'DESC']
-				]
+					db.sequelize.fn("isnull", db.sequelize.col("hourlyRate")),
+					["hourlyRate", "DESC"],
+				],
 			})
 			.then(function (dbArtists) {
-				res.render('highest', { artists: dbArtists });
+				res.render("index", { artists: dbArtists });
 			});
 	});
 
-	app.get('/traditional', function (req, res) {
+	app.get("/traditional", function (req, res) {
 		db.artists
 			.findAll({
 				where: {
-					stylePref: 'Traditional'
-				}
+					stylePref: "Traditional",
+				},
 			})
 			.then(function (dbArtists) {
-				res.render('traditional', { artists: dbArtists });
+				res.render("index", { artists: dbArtists });
 			});
 	});
 
-	app.get('/tribal', function (req, res) {
+	app.get("/tribal", function (req, res) {
 		db.artists
 			.findAll({
 				where: {
-					stylePref: 'Tribal'
-				}
+					stylePref: "Tribal",
+				},
 			})
 			.then(function (dbArtists) {
-				res.render('tribal', { artists: dbArtists });
+				res.render("index", { artists: dbArtists });
 			});
 	});
 
-	app.get('/japanese', function (req, res) {
-		db.artist
-			.findAll({
-				where: {
-					stylePref: 'Japanese'
-				}
-			})
-			.then(function (dbArtists) {
-				res.render('japanese', { artists: dbArtists });
-			});
-	});
-
-	app.get('/blackwork', function (req, res) {
+	app.get("/japanese", function (req, res) {
 		db.artists
 			.findAll({
 				where: {
-					stylePref: 'Blackwork'
-				}
+					stylePref: "Japanese",
+				},
 			})
 			.then(function (dbArtists) {
-				res.render('blackwork', { artists: dbArtists });
+				res.render("index", { artists: dbArtists });
 			});
 	});
 
-	app.get('/minimalist', function (req, res) {
+	app.get("/blackwork", function (req, res) {
 		db.artists
 			.findAll({
 				where: {
-					stylePref: 'Minimalist'
-				}
+					stylePref: "Blackwork",
+				},
 			})
 			.then(function (dbArtists) {
-				res.render('minimalist', { artists: dbArtists });
+				res.render("index", { artists: dbArtists });
 			});
 	});
 
-	app.get('/new-school', function (req, res) {
+	app.get("/minimalist", function (req, res) {
 		db.artists
 			.findAll({
 				where: {
-					stylePref: 'New School'
-				}
+					stylePref: "Minimalist",
+				},
 			})
 			.then(function (dbArtists) {
-				res.render('new-school', { artists: dbArtists });
+				res.render("index", { artists: dbArtists });
 			});
 	});
 
-	app.get('/realist', function (req, res) {
+	app.get("/new-school", function (req, res) {
 		db.artists
 			.findAll({
 				where: {
-					stylePref: 'Realism'
-				}
+					stylePref: "New School",
+				},
 			})
 			.then(function (dbArtists) {
-				res.render('realist', { artists: dbArtists });
+				res.render("index", { artists: dbArtists });
 			});
 	});
 
-	app.get('/watercolor', function (req, res) {
+	app.get("/realist", function (req, res) {
 		db.artists
 			.findAll({
 				where: {
-					stylePref: 'Watercolor'
-				}
+					stylePref: "Realism",
+				},
 			})
 			.then(function (dbArtists) {
-				res.render('watercolor', { artists: dbArtists });
+				res.render("index", { artists: dbArtists });
+			});
+	});
+
+	app.get("/watercolor", function (req, res) {
+		db.artists
+			.findAll({
+				where: {
+					stylePref: "Watercolor",
+				},
+			})
+			.then(function (dbArtists) {
+				res.render("index", { artists: dbArtists });
 			});
 	});
 };
