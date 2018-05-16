@@ -27,17 +27,17 @@ module.exports = function(app) {
 
   // Get route for returning(SORTING) posts of a specific stylePref
   // The same route will be used to sort artists by other parameters
-  app.get("/api/posts/stylePref/:stylePref", function(req, res) {
-    db.artist
-      .findAll({
-        where: {
-          stylePref: req.params.stylePref,
-        },
-      })
-      .then(function(dbArtist) {
-        res.json(dbArtist);
-      });
-  });
+  // app.get("/api/posts/stylePref/:stylePref", function(req, res) {
+  //   db.artists
+  //     .findAll({
+  //       where: {
+  //         stylePref: req.params.stylePref,
+  //       },
+  //     })
+  //     .then(function(dbArtists) {
+  //       res.render("index", {artists: dbArtists});
+  //     });
+  // });
 
   // Get route for returning(SORTING) posts of a ASCENDING hourly rate
   // The same route will be used to sort artists by other parameters

@@ -99,17 +99,46 @@
 // console.log(showPosition(position));
 // console.log(showError(error));
 
+// function getDistance(req)
+//   {
+
+//      //Find the distance
+//      var distanceService = new google.maps.DistanceMatrixService();
+//      distanceService.getDistanceMatrix({
+//         origins: [req],
+//         destinations: ["3257 Fitzgerald Road, Rancho Cordova CA 95742"],
+//         travelMode: google.maps.TravelMode.WALKING,
+//         unitSystem: google.maps.UnitSystem.METRIC,
+//         durationInTraffic: true,
+//         avoidHighways: false,
+//         avoidTolls: false
+//     },
+//     function (response, status) {
+//         if (status !== google.maps.DistanceMatrixStatus.OK) {
+//             console.log('Error:', status);
+//         } else {
+//             console.log(response);
+            
+//         }
+//     });
+//   }
+
 // $('#search-btn').on("click", function() {
 //         event.preventDefault();
 
-//         var location = {
+//         var searchLocation = $('#userCity').val().trim();
 
-
-  
-//                     };
-
-//             module.exports = location;
+//         getDistance(searchLocation);
+//             // module.exports = searchLocation;
 //     });
+
+
+
+
+
+
+
+
 
 </script>
 
