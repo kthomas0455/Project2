@@ -151,7 +151,6 @@ h6 {
 }
 
 #header .top_banner{
-/*	background:url(../images/header.jpg) no-repeat left top;*/
 	height:390px;
 	padding:60px 95px 0 95px;
 	margin-bottom:10px;
@@ -380,6 +379,30 @@ a.btn:hover{
 
 #logo{
 	width: 90px;
+}
+
+/* artist cards */
+
+.artist-card {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	display: inline-block;
+	border-color: #202020;
+	background-color:#373f4a;
+}
+
+.card-body{
+	background-color: #373f4a;
+}
+
+
+/* support page */
+
+.box3 {	
+	margin-top: 0px;
+	height: 200px;
+	padding:10px 15px 5px;
+	border:#283032 solid 1px;
 }
 
 
