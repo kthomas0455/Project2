@@ -12,56 +12,77 @@ var path = require("path");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function (app) {
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
-  app.get("/register", function(req, res) {
+  app.get("/register", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/register.html"));
   });
 
-  app.get("/contact", function(req, res) {
+  app.get("/contact", function (req, res) {
     res.render("contact");
   });
 
-  app.get("/search/:id", function(req, res) {
+  app.get("/search/:id", function (req, res) {
     db.artists
       .findAll({
         where: {
           id: req.params.id,
         },
       })
-      .then(function(dbArtists) {
+      .then(function (dbArtists) {
         res.render("profile", { artist: dbArtists[0] });
       });
   });
 
-  app.get("/search", function(req, res) {
+  app.get("/search", function (req, res) {
     // geocoder section here
 
     // get stuff from artists table
-    db.artists.findAll({}).then(function(dbArtists) {
+    db.artists.findAll({}).then(function (dbArtists) {
       res.render("index", { artists: dbArtists });
     });
     // var artists = []
   });
 
-  	// Search route to handle searching by zipcode
-	app.get('/search/zipcode/:zipcode', (req, res) => {
-		// search artists whose address have teh zip code to search by
-		db.artists
-			.findAll({
-				where: { location: { $like: `%${req.params.zipcode}%` } }
-				// sequelize.where(sequelize.fn('LOWER', sequelize.col('asset_name')), 'LIKE', '%' + lookupValue + '%')
-			}).then(dbArtists => { res.render('index', { artists: dbArtists }) }
-				// .then(dbArtists => res.status(200).send(dbArtists));
-			)
-	});
+  // Search route to handle searching by zipcode
+  app.get('/search/city/:zipcode', (req, res) => {
+    // search artists whose address have teh zip code to search by
+    db.artists
+      .findAll({
+        where: { location: { $like: `%${req.params.zipcode}%` } }
+        // sequelize.where(sequelize.fn('LOWER', sequelize.col('asset_name')), 'LIKE', '%' + lookupValue + '%')
+      }).then(dbArtists => { res.render('index', { artists: dbArtists }) }
+        // .then(dbArtists => res.status(200).send(dbArtists));
+      )
+  });
+  // Search route to handle searching by city
+  app.get('/search/city/:city', (req, res) => {
+    // search artists whose address have teh zip code to search by
+    db.artists
+      .findAll({
+        where: { location: { $like: `%${req.params.city}%` } }
+        // sequelize.where(sequelize.fn('LOWER', sequelize.col('asset_name')), 'LIKE', '%' + lookupValue + '%')
+      }).then(dbArtists => { res.render('index', { artists: dbArtists }) }
+        // .then(dbArtists => res.status(200).send(dbArtists));
+      )
+  });
 
-  app.get("/lowest-to-highest", function(req, res) {
+  //Attempt to get full address information
+  // app.get('/search/point/:point', (req, res) => {
+  //   // search artists whose address have teh zip code to search by
+  //   db.artists
+  //     .findAll({
+  //       where: { location: { $like: `%${req.params.zipcode}%` } }
+  //       // sequelize.where(sequelize.fn('LOWER', sequelize.col('asset_name')), 'LIKE', '%' + lookupValue + '%')
+  //     }).then(dbArtists => res.json({ dbArtists: location }));
+  // });
+
+  app.get("/lowest-to-highest", function (req, res) {
     db.artists
       .findAll({
         order: [
@@ -69,12 +90,12 @@ module.exports = function(app) {
           ["hourlyRate", "ASC"],
         ],
       })
-      .then(function(dbArtists) {
+      .then(function (dbArtists) {
         res.render("index", { artists: dbArtists });
       });
   });
 
-  app.get("/highest-to-lowest", function(req, res) {
+  app.get("/highest-to-lowest", function (req, res) {
     db.artists
       .findAll({
         order: [
@@ -82,106 +103,106 @@ module.exports = function(app) {
           ["hourlyRate", "DESC"],
         ],
       })
-      .then(function(dbArtists) {
+      .then(function (dbArtists) {
         res.render("index", { artists: dbArtists });
       });
   });
 
- 
-app.get("/traditional", function(req, res) {
+
+  app.get("/traditional", function (req, res) {
 
     db.artists.findAll({
-        where: {
-          stylePref: "Traditional",
-        },
-      })
-      .then(function(dbArtists) {
-        res.render("index", {artists: dbArtists});
+      where: {
+        stylePref: "Traditional",
+      },
+    })
+      .then(function (dbArtists) {
+        res.render("index", { artists: dbArtists });
       });
 
   });
 
 
-app.get("/tribal", function(req, res) {
-  
+  app.get("/tribal", function (req, res) {
+
     db.artists.findAll({
-        where: {
-          stylePref: "Tribal",
-        },
-      })
-      .then(function(dbArtists) {
+      where: {
+        stylePref: "Tribal",
+      },
+    })
+      .then(function (dbArtists) {
         res.render("index", { artists: dbArtists });
       });
   });
 
-  app.get("/japanese", function(req, res) {
+  app.get("/japanese", function (req, res) {
     db.artists
       .findAll({
         where: {
           stylePref: "Japanese",
         },
       })
-      .then(function(dbArtists) {
+      .then(function (dbArtists) {
         res.render("index", { artists: dbArtists });
       });
   });
 
-  app.get("/blackwork", function(req, res) {
+  app.get("/blackwork", function (req, res) {
     db.artists
       .findAll({
         where: {
           stylePref: "Blackwork",
         },
       })
-      .then(function(dbArtists) {
+      .then(function (dbArtists) {
         res.render("index", { artists: dbArtists });
       });
   });
 
-  app.get("/minimalist", function(req, res) {
+  app.get("/minimalist", function (req, res) {
     db.artists
       .findAll({
         where: {
           stylePref: "Minimalist",
         },
       })
-      .then(function(dbArtists) {
+      .then(function (dbArtists) {
         res.render("index", { artists: dbArtists });
       });
   });
 
-  app.get("/new-school", function(req, res) {
+  app.get("/new-school", function (req, res) {
     db.artists
       .findAll({
         where: {
           stylePref: "New School",
         },
       })
-      .then(function(dbArtists) {
+      .then(function (dbArtists) {
         res.render("index", { artists: dbArtists });
       });
   });
 
-  app.get("/realist", function(req, res) {
+  app.get("/realist", function (req, res) {
     db.artists
       .findAll({
         where: {
           stylePref: "Realism",
         },
       })
-      .then(function(dbArtists) {
+      .then(function (dbArtists) {
         res.render("index", { artists: dbArtists });
       });
   });
 
-  app.get("/watercolor", function(req, res) {
+  app.get("/watercolor", function (req, res) {
     db.artists
       .findAll({
         where: {
           stylePref: "Watercolor",
         },
       })
-      .then(function(dbArtists) {
+      .then(function (dbArtists) {
         res.render("index", { artists: dbArtists });
       });
   });
@@ -206,7 +227,7 @@ app.get("/tribal", function(req, res) {
 //             console.log('Error:', status);
 //         } else {
 //             console.log(response);
-            
+
 //         }
 //     });
 //   }
@@ -238,7 +259,7 @@ app.get("/tribal", function(req, res) {
 //             .then(function(dbArtists) {
 //               res.render("index", {artists: dbArtists});
 //             });
-        
+
 //       });
 //   });
 
