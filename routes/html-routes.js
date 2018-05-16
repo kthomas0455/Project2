@@ -8,6 +8,8 @@ var db = require("../models");
 
 var path = require("path");
 
+// var searchLocation = require('searchLocation');
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -73,21 +75,24 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/traditional", function(req, res) {
-    db.artists
-      .findAll({
+ 
+app.get("/traditional", function(req, res) {
+
+    db.artists.findAll({
         where: {
           stylePref: "Traditional",
         },
       })
       .then(function(dbArtists) {
-        res.render("index", { artists: dbArtists });
+        res.render("index", {artists: dbArtists});
       });
+
   });
 
-  app.get("/tribal", function(req, res) {
-    db.artists
-      .findAll({
+
+app.get("/tribal", function(req, res) {
+  
+    db.artists.findAll({
         where: {
           stylePref: "Tribal",
         },
@@ -168,4 +173,60 @@ module.exports = function(app) {
         res.render("index", { artists: dbArtists });
       });
   });
+
 };
+
+// function getDistance(req)
+//   {
+//      //Find the distance
+//      var distanceService = new google.maps.DistanceMatrixService();
+//      distanceService.getDistanceMatrix({
+//         origins: [req.location],
+//         destinations: [searchLocation],
+//         travelMode: google.maps.TravelMode.WALKING,
+//         unitSystem: google.maps.UnitSystem.METRIC,
+//         durationInTraffic: true,
+//         avoidHighways: false,
+//         avoidTolls: false
+//     },
+//     function (response, status) {
+//         if (status !== google.maps.DistanceMatrixStatus.OK) {
+//             console.log('Error:', status);
+//         } else {
+//             console.log(response);
+            
+//         }
+//     });
+//   }
+
+// app.get("/search/location", function(req, res) {
+//     db.artists
+//       .findAll({
+//         where: {
+//           location: req.params.location,
+//         },
+//       })
+//       .then(function(dbArtists) {
+
+//         // function to calculate data difference in distance?
+
+//         var distanceMatrix =[];
+
+//         for (i=0; i<dbArtists.length; i++) {
+//            distanceMatix.push(getDistance(dbArtists[i]))
+
+//         }
+
+
+//           db.artists.findAll({
+//               where: {
+//                 stylePref: "Watercolor",
+//               },
+//             })
+//             .then(function(dbArtists) {
+//               res.render("index", {artists: dbArtists});
+//             });
+        
+//       });
+//   });
+

@@ -25,7 +25,7 @@ module.exports = function(app) {
 			});
 	});
 
-	// Get route for returning(SORTING) posts of a specific stylePref
+ // Get route for returning(SORTING) posts of a specific stylePref
 	// The same route will be used to sort artists by other parameters
 	app.get('/api/posts/stylePref/:stylePref', function(req, res) {
 		db.artists
@@ -38,6 +38,8 @@ module.exports = function(app) {
 				res.json(dbArtist);
 			});
 	});
+
+
 
 	// Get route for returning(SORTING) posts of a ASCENDING hourly rate
 	// The same route will be used to sort artists by other parameters
