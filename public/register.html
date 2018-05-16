@@ -90,7 +90,7 @@
                         <!-- style pref -->
                         <label for="style" style="font-size: 16px;">Preferred Style: [required]</label>
                         <select class="form-control" id="style">
-                          <option>Black Work</option>
+                          <option>Blackwork</option>
                           <option>Japanese</option>
                           <option>Minimalist</option>
                           <option>New School</option>
@@ -183,6 +183,17 @@
               // }
               // )
               submitPost(artistData);
+              alert("Thank you! You have been added to our artist database.")
+              $('#name').val('');
+              $('#location').val('');
+              $('#number').val('');
+              $('#shopName').val('');
+              $('#rate').val('');
+              $('#min').val('');
+              $('#igLink').val('');
+              $('#shopLink').val('');
+              $('#bio').val('');
+              $('#comments').val('');
 
 
             });
