@@ -1,55 +1,78 @@
+<div class="left_side_bar">
 
-<div class="left_side_bar"> 
-
-      <div class="col_1">
-        <div class="box2" style="margin-top: 10px;">
-          <h1 id="subhead" class="lobster">Filter results by:</h1>
-          <ul>
-            <li><a href="/highest-to-lowest">Price - Highest to lowest</a></li>
-            <li><a href="/lowest-to-highest">Price - Lowest to Highest</a></li>
-            <li>Style</li>
-                <li><a href="/blackwork" style="margin-left: 10px;">Black Work</a></li>
-                <li><a href="/japanese" style="margin-left: 10px;">Japanese</a></li>
-                <li><a href="/minimalist" style="margin-left: 10px;">Minimalist</a></li>
-                <li><a href="/new-school" style="margin-left: 10px;">New School</a></li>
-                <li><a href="/realist" style="margin-left: 10px;">Realist</a></li>
-                <li><a href="/traditional" style="margin-left: 10px;">Traditioinal</a></li>
-                <li><a href="/tribal" style="margin-left: 10px;">Tribal</a></li>
-                <li><a href="/watercolor" style="margin-left: 10px;">Watercolor</a></li>
-          </ul>
-        </div>
-      </div>
-
-      
-      <div class="col_1">
-        <div class="box" style="margin-top: 15px;">
-          <h1 class="lobster">Featured Artist</h1>
-          <p>Feature to come!</p>
+  <div class="col_1">
+    <div class="box2" style="margin-top: 10px;">
+      <h1 id="subhead" class="lobster">Filter results by:</h1>
+      <ul>
+        <li>
+          <a href="/highest-to-lowest">Price - Highest to lowest</a>
+        </li>
+        <li>
+          <a href="/lowest-to-highest">Price - Lowest to Highest</a>
           <br>
-                   
-        </div>
-      </div>
+        </li>
+        <h1 id="subhead" class="lobster results_head">Results by style:</h1>
+
+        <li>
+          <a href="/blackwork" style="margin-left: 10px;">Black Work</a>
+        </li>
+        <li>
+          <a href="/japanese" style="margin-left: 10px;">Japanese</a>
+        </li>
+        <li>
+          <a href="/minimalist" style="margin-left: 10px;">Minimalist</a>
+        </li>
+        <li>
+          <a href="/new-school" style="margin-left: 10px;">New School</a>
+        </li>
+        <li>
+          <a href="/realist" style="margin-left: 10px;">Realist</a>
+        </li>
+        <li>
+          <a href="/traditional" style="margin-left: 10px;">Traditioinal</a>
+        </li>
+        <li>
+          <a href="/tribal" style="margin-left: 10px;">Tribal</a>
+        </li>
+        <li>
+          <a href="/watercolor" style="margin-left: 10px;">Watercolor</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="col_1">
+    <div class="box" style="margin-top: 15px;">
+      <h1 class="lobster">Featured Artist</h1>
+      <p>Feature to come!</p>
+      <br>
 
     </div>
+  </div>
 
-    <div class="right_section">
-      <div class="common_content" style="margin-top: 10px;">
-        <h1 id="artist_name" class="lobster"><div id="artist_name">Welcome</div></h1>
-       
-        <p>Welcome to Think Ink. A catalog of tattoo artists at your fingertips.</p>
-        </div>
+</div>
+
+<div class="right_section">
+  <div class="common_content" style="margin-top: 10px;">
+    <h1 id="artist_name" class="lobster">
+      <div id="artist_name">Welcome</div>
+    </h1>
+
+    <p>Welcome to Think Ink. A catalog of tattoo artists at your fingertips.</p>
+  </div>
 
 
-					{{#each artists}}
-					<div class="card artist-card" style="width: 18rem;">
-					  <img class="card-img-top" src="/images/artist-images/{{artistName}}/{{artistName}}1.jpg" style="width: 100%; height: 200px;">
-					  <div class="card-body">
-					    <h1 id="artist_name" class="card-title text-center lobster" style="font-size: 20px; font-weight: bold; margin: 5px; 5px; 5px; 0px;">{{artistName}}</h1>
-					    <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 5px;">{{location}}</h4>
-					    <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 5px;">Preferred Style: {{stylePref}}</h4>
-              <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 15px;">Hourly Rate ($/hr): {{hourlyRate}}</h4>
-					    <a href="/search/{{this.id}}" class="btn btn-primary btn-center" style="margin-left: 80px; margin-bottom: 15px;">Check them Out!</a>
-					  </div>
-					</div>
-					{{/each}}
+  {{#each artists}}
+  <div class="card artist-card" style="width: 18rem;">
+    <img class="card-img-top" src="/images/artist-images/{{artistName}}/{{artistName}}1.jpg" style="width: 100%; height: 200px;">
+    <div class="card-body">
+      <h1 id="artist_name" class="card-title text-center lobster" style="font-size: 20px; font-weight: bold; margin: 5px; 5px; 5px; 0px;">{{artistName}}</h1>
+      <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 5px;">{{location}}</h4>
+      <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 5px;">Preferred Style: {{stylePref}}</h4>
+      <h4 class="text-left" style="font-size: 14px; margin-left: 10px; margin-bottom: 15px;">Hourly Rate ($/hr): {{hourlyRate}}</h4>
+      <a href="/search/{{this.id}}" class="btn btn-primary btn-center" style="margin-left: 80px; margin-bottom: 15px;">Check them Out!</a>
     </div>
+  </div>
+  {{/each}}
+</div>
