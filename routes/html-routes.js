@@ -49,6 +49,18 @@ module.exports = function(app) {
     // var artists = []
   });
 
+  	// Search route to handle searching by zipcode
+	app.get('/search/zipcode/:zipcode', (req, res) => {
+		// search artists whose address have teh zip code to search by
+		db.artists
+			.findAll({
+				where: { location: { $like: `%${req.params.zipcode}%` } }
+				// sequelize.where(sequelize.fn('LOWER', sequelize.col('asset_name')), 'LIKE', '%' + lookupValue + '%')
+			}).then(dbArtists => { res.render('index', { artists: dbArtists }) }
+				// .then(dbArtists => res.status(200).send(dbArtists));
+			)
+	});
+
   app.get("/lowest-to-highest", function(req, res) {
     db.artists
       .findAll({
