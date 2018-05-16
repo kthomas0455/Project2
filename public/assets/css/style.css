@@ -419,11 +419,17 @@ a.btn:hover{
 }
 
 #image{
-	background:url(../../images/MainImage.png) no-repeat left center;
+	background:url(../../images/MainImage2.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  /*Original background image css properties for orginal MainImage*/
+	/*background:url(../../images/MainImage.png) no-repeat left center;
 	background-size: cover;
 	background-size: 100%;
 	background-position: top;
-
+*/
 }
 
 #bodyContainer{

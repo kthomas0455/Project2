@@ -1,174 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Artist Register</title>
 
-<!-- Bootstrap File -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Bootstrap File -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
-<!-- LINK TO  font -->
+  <!-- LINK TO  font -->
 
-<link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css?family=Lobster+Two|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Open+Sans" rel="stylesheet">
 
- 
-</style>
+
+  </style>
 
 </head>
+
 <body>
 
-    <div class="row">
-        <div class="col-md-12">
+  <div class="row">
+    <div class="col-md-12">
 
-            <div id="wrapper"> 
+      <div id="wrapper">
 
-              <div id="header_profile"> 
+        <div id="header_profile">
 
-                     <img id="logo" src="images/ThinkInkLogo.png">
-                      <div class="top_banner_profile">
-                        <div class="navigation">
-                        <ul style="margin-left: 650px;">
-                          <li><a href="home.html">Home</a></li>
-                          <li><a href="#">Contact</a></li>
-                  </ul><hr><br>
+          <img id="logo" src="images/ThinkInkLogo.png">
+          <div class="top_banner_profile">
+            <div class="navigation">
+              <ul style="margin-left: 650px;">
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/contact">Contact</a>
+                </li>
+              </ul>
+              <hr>
+              <br>
+            </div>
+          </div>
+
+          <div class="row" id="register_div">
+            <div class="col-sm">
+
+              <div class="container" style="padding-bottom: 5%;">
+                <div class="card  border-0">
+                  <div class="card-body  border-0" id="#">
+                    <h1 class="lobster">Welcome to Think Ink</h1>
+                    <h5 class="artist_profile_head" id="header">Please fill in your profile information</h5>
+
+                    <form id="register">
+                      <div class="form-group">
+                        <!-- artist -->
+                        <label for="name" style="font-size: 16px;">Artist Name: [required]</label>
+                        <input type="text" class="form-control" id="name" placeholder="Name">
+                        <br>
+                        <!-- location -->
+                        <label for="location" style="font-size: 16px;">Location: [required]</label>
+                        <input type="text" class="form-control" id="location" placeholder="Zip Code">
+                        <br>
+                        <!-- phone number -->
+                        <label for="number" style="font-size: 16px;">Contact Phone Info: [required]</label>
+                        <input type="text" class="form-control" id="number" placeholder="phone number with area code ex: 19161112222">
+                        <br>
+                        <!-- independent or shop -->
+                        <label for="exampleFormControlInput1" style="font-size: 16px;">Independent or Shop Artist: [required]</label>
+                        <select class="form-control" id="independent">
+                          <option>Independent</option>
+                          <option>Shop</option>
+                        </select>
+                        <br>
+                        <!-- shop name -->
+                        <label for="shopName" style="font-size: 16px;">Shop Name:</label>
+                        <input type="text" class="form-control" id="shopName" placeholder="Tattoo Shop Name, if N/A leave blank">
+                        <br>
+                        <!-- shop link -->
+                        <label for="shopLink" style="font-size: 16px;">Shop Link:</label>
+                        <input type="text" class="form-control" id="shopLink" placeholder="Tattoo Shop Link, if N/A leave blank">
+                        <br>
+                        <!-- style pref -->
+                        <label for="style" style="font-size: 16px;">Preferred Style: [required]</label>
+                        <select class="form-control" id="style">
+                          <option>Black Work</option>
+                          <option>Japanese</option>
+                          <option>Minimalist</option>
+                          <option>New School</option>
+                          <option>Realist</option>
+                          <option>Traditional</option>
+                          <option>Tribal</option>
+                          <option>Watercolor</option>
+                        </select>
+                        <br>
+                        <!-- hourly rate -->
+                        <label for="rate" style="font-size: 16px;">Hourly Rate: [required]</label>
+                        <input type="text" class="form-control" id="rate" placeholder="$/hr, enter integers">
+                        <br>
+                        <!-- tattoo min -->
+                        <label for="min" style="font-size: 16px;">Tattoo Minimum Cost: [required]</label>
+                        <input type="text" class="form-control" id="min" placeholder="Tattoo minimum amount cost, enter integers.">
+                        <br>
+                        <!-- instagram link -->
+                        <label for="igLink" style="font-size: 16px;">Instagram Link: [required]</label>
+                        <input type="text" class="form-control" id="igLink" placeholder="Instagram Link">
+                        <br>
+                        <!-- bio -->
+                        <label for="bio" style="font-size: 16px;">Short Bio: [required]</label>
+                        <textarea class="form-control" id="bio" rows="3"></textarea>
+                        <br>
+                        <!-- additional comments -->
+                        <label for="comments" style="font-size: 16px;">Additional Comments: [aka deposit, other styles, etc.]</label>
+                        <textarea class="form-control" id="comments" rows="3"></textarea>
+                        <br>
+
+                        <button class="btn btn-outline-secondary submit btn-lg" type="submit">Submit</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-               </div>
+              </div>
 
- <div class="row" id="register_div">
-    <div class="col-sm">
 
-    <div class="container" style="padding-bottom: 5%;">
-        <div class="card  border-0">
-        <div class="card-body  border-0" id="#">
-          <h1 class="lobster">Welcome to Think Ink</h1>
-          <h5 class="artist_profile_head" id="header">Please fill in your profile information</h5>
+              <div class="clear"></div>
+              <div id="footer" style="padding-bottom: 8%;">Copyright &copy; ThinkInk 2018.
 
-      	<form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Artist Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Location(Zip Code):</label>
-          <input type="text" class="form-control" id="location" placeholder="Location">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Contact Info: (phone number with area code ex: 19161112222)</label>
-          <input type="text" class="form-control" id="number" placeholder="Contact Info">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Independent or Shop Artist:</label>
-          <select class="form-control" id="independent">
-            <option>Independent</option>
-            <option>Shop</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Shop Name:</label>
-          <input type="text" class="form-control" id="shopName" placeholder="Tattoo Shop Name, if N/A leave blank">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Shop Link:</label>
-          <input type="text" class="form-control" id="shopLink" placeholder="Tattoo Shop Link, if N/A leave blank">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Preferred Style: </label>
-          <select class="form-control" id="style">
-            <option>Black Work</option>
-            <option>Japanese</option>
-            <option>Minimalist</option>
-            <option>New School</option>
-            <option>Realist</option>
-            <option>Traditional</option>
-            <option>Tribal</option>
-            <option>Watercolor</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Hourly Rate:</label>
-          <input type="text" class="form-control" id="rate" placeholder="$/hr, enter integers">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Tattoo Minimum Cost:</label>
-          <input type="text" class="form-control" id="min" placeholder="Tattoo minimum amount cost, enter integers.">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Instagram Link:</label>
-          <input type="text" class="form-control" id="igLink" placeholder="Instagram Link">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Short Bio:</label>
-          <textarea class="form-control" id="bio" rows="3"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Additional Comments: (aka deposit, other styles, etc.)</label>
-          <textarea class="form-control" id="comments" rows="3"></textarea>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <a href="/">
-                    <button class="btn btn-outline-secondary" id="search-btn" type=" button ">Submit</button>
-        </a>
-      </form>
-        </div>
-  </div>
-</div>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
-      
-    <div class="clear"></div>
-    <div id="footer" style="padding-bottom: 8%;">Copyright &copy; ThinkInk 2018. 
-    
-    </div>
-  
-  </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
 
- </div>
+        <script type="text/javascript">
+          $(document).ready(function () {
 
-</div>
+            var registerForm = $('#register')
 
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+            $(registerForm).on('submit', function handleFormSubmit(event) {
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+              event.preventDefault();
 
-<script type="text/javascript">
+              var hrlyValue = $('#rate').val().trim();
+              var minValue = $('#min').val().trim();
 
-$('#search-button').on('click', function() {
-        
-        event.preventDefault();
+              var artistData = {
+                artistName: $('#name').val().trim(),
+                location: $('#location').val().trim(),
+                artistNumber: $('#number').val().trim(),
+                independent: $('#independent').val().trim(),
+                shopName: $('#shopName').val().trim(),
+                hourlyRate: parseInt(hrlyValue),
+                artistMin: parseInt(minValue),
+                stylePref: $('#style').val().trim(),
+                artistInsta: $('#igLink').val().trim(),
+                shopLink: $('#shopLink').val().trim(),
+                artistBio: $('#bio').val().trim(),
+                artistComments: $('#comments').val().trim()
+              };
 
-        var hrlyValue = $('#rate').val().trim();
-        var minValue = $('#min').val().trim();
+              console.log(artistData);
 
-        var artistData = {
-            artistName: $('#name').val().trim(),
-            location: $('#location').val().trim(),
-            artistNumber: $('#number').val().trim(),
-            independent: $('#independent').val().trim(),
-            shopName: $('#shopName').val().trim(),
-            hourlyRate: parseInt(hrlyValue),
-            artistMin: parseInt(minValue),
-            stylePref: $('#style').val().trim(),
-            artistInsta: $('#igLink').val().trim(),
-            shopLink: $('#shopLink').val().trim(),
-            artistBio: $('#bio').val().trim(),
-            artistComments: $('#comments').val().trim()
-        };
+              // $.ajax('/api/posts', {
+              //   type: "POST",
+              //   data: artistData
+              // }).then(function (result) {
 
-        $.ajax('/api/posts', {
-            type: "POST",
-            data: artistData
-        }).then(function(result)  {
-            
-            alert("Thank you! You have been added to our Artist Database.");
-        }
-        )
-    });
+              //   alert("Thank you! You have been added to our Artist Database.");
+              // }
+              // )
+              submitPost(artistData);
 
-</script>
+
+            });
+
+            function submitPost(artists) {
+              $.post("/api/posts/", artists, function () {
+                // window.location.href = "/";
+              });
+            };
+
+          });
+
+        </script>
 </body>
+
 </html>
