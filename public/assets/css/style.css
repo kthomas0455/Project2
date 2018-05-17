@@ -424,17 +424,17 @@ a.btn:hover{
 }
 
 #image{
-	background:url(../../images/MainImage2.png) no-repeat center center fixed;
+	/* background:url(../../images/MainImage2.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
-	  background-size: cover;
+	  background-size: cover; */
 	  /*Original background image css properties for orginal MainImage*/
-	/*background:url(../../images/MainImage.png) no-repeat left center;
+	background:url(../../images/MainImage3.png) no-repeat left center;
 	background-size: cover;
 	background-size: 100%;
 	background-position: top;
-*/
+
 }
 
 #bodyContainer{
@@ -491,29 +491,26 @@ a.btn:hover{
 	margin-left: 0;
 }
 
-/*breakpoints for main page */
+/* breakpoints for main page */
 
-@media screen and (max-width : 929px) {
-		#bodyContainer{
-		margin-left: 100px;
+
+
+@media only screen and (max-width : 1176px) {
+	#bodyContainer{
+		margin-left: 40px;
 		position: relative;
-}
-
-/*@media only screen and (max-width : 1190px) {
-	#bodyContainer{
-	margin-left: 110px;
-
+		padding-bottom: 40%;
 	}
 }
 
-@media screen and (max-width : 1500px) {
+@media only screen and (min-width : 1177px) {
 	#bodyContainer{
-	margin-left: -110px;
-
+		margin-left: -100px;
+		position: relative;
 	}
-}*/
-	
 }
+
+
 
 
 
