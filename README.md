@@ -2,7 +2,7 @@
 
 link: 
 
-![alt-text](public/assets/readMe-images/home.png)
+![alt-text](public/assets/readMe-images/home.jpg)
 
 ## Description
 
@@ -10,7 +10,7 @@ Our application offer users a tattoo artist online database at the tips of their
 
 For the purposes of this app and to show its potential, we have curated a database of artists for the city of Sacramento (and only Sacramento) since the information needed is not available online. For future use, there would need footwork and participation of local artists to build the database out.
 
-![alt-text](public/assets/readMe-images/search.png)
+![alt-text](public/assets/readMe-images/search.jpg)
 
 ## Motivation
 
@@ -18,7 +18,7 @@ Finding quality tattoo artists is always a pain. Whether you want to find a spec
 
 Without having to leave your home you can find all the artists in your area, view their work and filter by style and price until ultimately you have found yourself the perfect match.
 
-![alt-text](public/assets/readMe-images/profile.png)
+![alt-text](public/assets/readMe-images/profile.jpg)
  
 ## Result
 
