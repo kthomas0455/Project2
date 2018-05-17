@@ -8,7 +8,7 @@ link:
 
 Our application offer users a tattoo artist online database at the tips of their fingers in order to help make the decision about getting tattoo easier. 
 
-For the purposes of this app and to show its potential, we have curated a database of artists for the city of Sacramento (and only Sacramento) since the information needed is not available online. For future use, there would need footwork and participation of local artists to build the database out.
+For the purposes of this app and to show its potential, we have curated a database of artists for the city of Sacramento (and only Sacramento) since the information needed is not available online. For future use, there would need to be some footwork and participation of local artists to build the database out.
 
 ![alt-text](public/images/readME-images/search.png)
 
@@ -22,7 +22,7 @@ Without having to leave your home you can find all the artists in your area, vie
  
 ## Result
 
-Using JavaScript, jQuery, Bootstrap, CSS, the Google geocode and maps APIs, MYSQL, JAWSDB, Sequelize, Express, Handlebars, Body Parser, Heroku and Node we were able to bring together an app 
+Using JavaScript, jQuery, Bootstrap, CSS, the Google geocode and maps APIs, MYSQL, JAWSDB, Sequelize, Express, Handlebars, Body Parser, Heroku and Node we were able to bring together this app. 
 
 ## Team Effort
 
@@ -30,7 +30,7 @@ Shannon and Kyle worked on the user interface - from conception and planning, cr
 
 ## Challenges
 
-Location searches in our DB proved to be a challenge and organizing them based on distance to a user inputed address turned out not to be doable in the time span. Twilio, seemed easy, but proved to be hard to get actually working for our purposes. 
+Location searches in our DB proved to be a difficult and organizing them based on distance to a user inputed address turned out not to be doable in the time span. Twilio, seemed easy at first, but proved to be hard to actually get working for our purposes. 
 
 ## Improvements
 
