@@ -25,6 +25,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,700,900|Noto+Sans|Nunito" rel="stylesheet">
 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe56kBedEPlgT_NnffILHycZisGKnUznQ&libraries=geometry"></script>
+
 <!-- font-family: 'Lobster Two', cursive; -->
 <!-- font-family: 'Open Sans', sans-serif;
 font-family: 'Lobster', cursive; -->
@@ -62,57 +64,5 @@ font-family: 'Nunito', sans-serif;
   
     {{{ body }}}
 
-    <div class="clear"></div>
-    
-    <div id="footer">Copyright &copy; ThinkInk 2018. 
-    
-    </div>
-	
-  </div>
-
-</div>
-
-  
-
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-
-$(document).ready(function (){
-
-
-
-function sendSMS(fieldReq1, fieldReq2) {
-
-
-};
-
-    
-    //create new burger to be eaten
-    $('#text-button').on("click", function() {
-        event.preventDefault();
-        
-        var x = $('#customer-number').val().trim();
-        var y = $('#customer-message').val().trim();
-        
-        if (x !== '' || y !== '') {
-
-            sendSMS(x,y);
-            alert("Congratulations, your message has been sent!");          
-        }
-
-        else {
-
-          return alert("Please fill out both fields in order to send the artist an SMS message.");
-          }
-
-    });
-
-});
-
-
-</script>
 
 </body></html>

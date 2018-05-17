@@ -21,6 +21,9 @@
                         </div>
           </div>
       </div>
+      <div class="box2" id="map" style="margin-top: 0px; height: 200px; width=100%;">
+      </div>
+
   </div>
 
 
@@ -87,3 +90,98 @@
   </div>
 
 </div>
+
+<div class="clear"></div>
+    
+    <div id="footer">Copyright &copy; ThinkInk 2018. 
+    
+    </div>
+  
+  </div>
+
+</div>
+
+  
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function (){
+
+
+  $.ajax({
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?address={{artist.location}}&key=AIzaSyCS_MZodFIJaZlfAyGSHqjCSvSbSyU2S6Q',
+    method: 'GET'
+  }).then(function(response) {
+
+      var artistLat = response.results[0].geometry.location.lat;
+      var artistLong = response.results[0].geometry.location.lng;
+    console.log(artistLat);
+    console.log(artistLong);
+
+    function initMap() {} 
+
+    $(()=>{
+        var options = {
+          zoom: 14,
+          center: {lat: artistLat, lng: artistLong}
+        }
+            var map = new google.maps.Map(document.getElementById('map'), options);
+            var marker = new google.maps.Marker({
+              position: {lat: artistLat, lng: artistLong},
+              map: map
+            });
+            var infoWindow = new google.maps.InfoWindow({
+              content: '<h4 style="font-size: 10px; color: black; font-weight: bold;">{{artist.location}}</h4>'
+            });
+
+            marker.addListener('click', function() {
+            infoWindow.open(map, marker);
+            });
+          });
+
+
+});
+
+
+
+
+
+// function sendSMS(fieldReq1, fieldReq2) {
+
+
+// };
+
+    
+//     //create new burger to be eaten
+//     $('#text-button').on("click", function() {
+//         event.preventDefault();
+        
+//         var x = $('#customer-number').val().trim();
+//         var y = $('#customer-message').val().trim();
+        
+//         if (x !== '' || y !== '') {
+
+//             sendSMS(x,y);
+//             alert("Congratulations, your message has been sent!");          
+//         }
+
+//         else {
+
+//           return alert("Please fill out both fields in order to send the artist an SMS message.");
+//           }
+
+//     });
+
+});
+
+
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS_MZodFIJaZlfAyGSHqjCSvSbSyU2S6Q&callback=initMap">
+    </script>
