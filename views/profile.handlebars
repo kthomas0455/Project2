@@ -115,13 +115,15 @@
 $(document).ready(function (){
 
 
+
   $.ajax({
-    url: 'https://maps.googleapis.com/maps/api/geocode/json?address={{artist.location}}&key=AIzaSyCS_MZodFIJaZlfAyGSHqjCSvSbSyU2S6Q',
+    url: '/latlng/{{artist.location}}',
     method: 'GET'
   }).then(function(response) {
 
-      var artistLat = response.results[0].geometry.location.lat;
-      var artistLong = response.results[0].geometry.location.lng;
+  console.log(response);
+      var artistLat = response.lat;
+      var artistLong = response.lng;
     console.log(artistLat);
     console.log(artistLong);
 
