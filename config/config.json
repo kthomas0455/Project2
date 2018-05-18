@@ -7,9 +7,9 @@
     "dialect": "mysql"
   },
   "production": {
-   "username": "ap1r4xy3i8niiks1",
-    "password": "jb9ldwjdpsoapvcb",
-    "database": "w1u0u1ma26sgdqzo",
+   "username": "vpw9ahbhxhvdsv62",
+    "password": "ri20v4l40trtuu9z",
+    "database": "fhw1c3wie5a9r8sq",
     "host": "wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
