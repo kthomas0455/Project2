@@ -1,6 +1,14 @@
 // Requiring our Todo model
 var db = require('../models');
 
+var NodeGeocoder = require('node-geocoder');
+
+var options = {
+  provider: 'google'
+}
+
+var geocoder = NodeGeocoder(options);
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -93,4 +101,19 @@ module.exports = function(app) {
 				res.json(dbArtists);
 			});
 	});
+
+	// get user address corresponding lat and lng from google api geocode
+	app.get('/latlng/:address', function(req, res){
+
+		geocoder.geocode(req.params.address)
+		  .then(function(result) {
+		    var Alat = result[0].latitude;
+		    var Alng = result[0].longitude;
+
+		    res.json({lat: Alat, lng: Alng});
+		  })
+		  .catch(function(err) {
+		    console.log(err);
+		  });
+	})
 };
